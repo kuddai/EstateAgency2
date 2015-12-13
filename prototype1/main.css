@@ -1,0 +1,22 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.location {
+    background-color: lightcyan;
+}
+
+.type, .house {
+    background-color: #4BBFE4;
+}
+.description, .more {
+    background-color: #071f27;
+}
+
+.price {
+    background-color: #ff2c5e;
+}
+
+.area, .additional {
+    background-color: lightgrey;
+}
