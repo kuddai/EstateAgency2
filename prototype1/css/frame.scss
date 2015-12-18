@@ -1,0 +1,288 @@
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        width: 100%*$i/12;
+    }
+}
+
+$base-font-size: 16px;
+
+$type-settings: (
+  -1: (
+    font-size: 0.75 * $base-font-size
+  ),
+  0: (
+    font-size: $base-font-size
+  ),
+  1: (
+    font-size: 1.333 * $base-font-size
+  ),
+  2: (
+    font-size: 1.778 * $base-font-size
+  ),
+  3: (
+    font-size: 2.368 * $base-font-size
+  )
+);
+
+@function type-scale($level) {
+  @return map-get(
+    map-get($type-settings, $level), 'font-size');
+}
+
+@function line-height($level) {
+  @return map-get(
+    map-get($type-settings, $level), 'font-size') * 1.25;
+}
+
+@mixin type-setting($level) {
+  font-size: type-scale($level);
+  line-height: line-height($level);
+}
+/*
+*, *:before, *:after {
+  box-sizing: border-box;
+  position: relative;
+}
+*/
+html, body {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	position: relative;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+@mixin rp-offer($width, $block-margin: 3px, $text-margin: 15px) {
+    //tricky part 
+    //choose a, b so that there is same margin between block
+    //horizontally and vertically. 
+    $w: $width;
+    $x: $block-margin;
+    $y: $text-margin;
+    $b: ($w - 2 * $x) / 3;
+    $a: ($b - $x) / 2;
+    
+    
+    @function shift($i) {
+        @return 1 * $b + ($i - 1) * $a + $i * $x;
+    }
+    
+    @mixin rp-block($wd, $ht, $level) {
+        $fs: type-scale($level);
+        $lh: line-height($level);
+        width: $wd;
+        height: $ht;
+        font-size: $fs;
+        line-height: $lh;
+        .text {
+            max-width: $wd - 2 * $y;
+            max-height: round(($ht - 2 * $y) / $lh) * $lh;
+        }
+    }
+    
+    position: relative;
+    width: $w;
+    height: $b;
+    
+    .type, .price, .house, .more {
+        text-transform: uppercase;
+        @include rp-block($a, $a, 1);
+    }
+    
+    .description {
+        @include rp-block($b, $a, 0);
+    }
+    
+    .additional, .area {
+        @include rp-block($a, $a, 0);
+    }
+    
+    .location {
+        @include rp-block($b, $b, 2);
+    }
+
+    .location, .type, .price, .house, .area {
+        top: 0;
+    }    
+
+    .description, .additional, .more {
+        top: $a + $x;
+    }
+
+    .location {
+        left: 0;
+    }
+
+    .type, .description {
+        left: shift(1);
+    }
+
+    .price {
+        left: shift(2);
+    }
+
+    .house, .additional {
+        left: shift(3);
+    }
+
+    .area, .more {
+        left: shift(4);
+    } 
+}
+
+.location, .type, .price, .house, .more,
+.area, .description, .additional {
+    position: absolute;
+    text-align: center;
+    box-sizing: border-box;
+    display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+
+	align-items: center;
+    justify-content: center;
+}
+
+.card {
+    padding: 15px;
+    box-shadow: 2px 2px 6px #bcbcbc;
+	box-sizing: border-box;
+	position: relative;
+}
+
+.location {
+    background-color: lightcyan;
+}
+
+.type, .house {
+    color: white;
+    background-color: #03B1F3;
+}
+
+.description, .more {
+    color: white;
+    background-color: #071f27;
+}
+
+.price {
+    color : white;
+    background-color: #ff2c83;
+}
+
+.area, .additional {
+    background-color: lightgrey;
+}
+
+.description, .more, .area {
+    .text {
+		overflow: hidden;
+    	position: relative;
+    }
+}
+
+.description {
+	.text {
+		text-align: justify;
+	}
+}
+
+.additional, .area {
+	//background: linear-gradient( 0deg, rgba(211,211,211, 1), rgba(211,211,211, 1));//linear-gradient(to bottom, rgba(211,211,211, 0), rgba(211,211,211, 1) 150px, rgba(211,211,211, 1));
+	.text {
+		/*
+		div:nth-child(odd) {
+			float: left;
+			width: 45%;
+			text-align: right;
+		}
+		div:nth-child(even) {
+			float: right;
+			text-align: left;
+			width: 45%;
+		}
+		*/
+		tbody {
+			text-align: left;
+		}
+		thead {
+			text-align: center;
+		}
+		
+		table {
+			table-layout: fixed;
+			border-collapse: collapse;
+		}
+		/*tr {
+			height: line-height(0);
+		}*/
+		td {
+			text-overflow: ellipsis;
+			padding: 0px;
+		}
+		td:first-child {
+			padding-right: 10px;
+		}
+		
+	}
+}
+
+.ellipsis {
+    background: linear-gradient(to right, rgba(7, 31, 39, 0), rgba(7, 31, 39, 1) 50%, #071f27);
+    position: absolute;
+    right:0;
+    bottom:0;
+    width: 6em;
+    text-align: right;
+}
+
+.fill {
+    background: #071f27; 
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+//from bootstap
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        width: 750px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1999px) {
+    .container {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+    .offer {
+        @include rp-offer(1108px);
+    }
+}
+.container {
+    @extend .clearfix;
+    box-sizing: border-box;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
