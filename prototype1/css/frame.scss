@@ -12,6 +12,7 @@
     }
 }
 
+$anim-time: 0.35s;
 $base-font-size: 16px;
 
 $type-settings: (
@@ -45,6 +46,14 @@ $type-settings: (
 @mixin type-setting($level) {
   font-size: type-scale($level);
   line-height: line-height($level);
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
 }
 /*
 *, *:before, *:after {
@@ -87,6 +96,8 @@ body {
         height: $ht;
         font-size: $fs;
         line-height: $lh;
+		//without that with just padding it is very hard to center
+		//everything properly in case of possible content overflow
         .content {
             max-width: $wd - 2 * $y;
             max-height: round(($ht - 2 * $y) / $lh) * $lh;
@@ -151,6 +162,7 @@ body {
 .area, .description, .additional {
     position: absolute;
     text-align: center;
+	font-weight: 300;
     box-sizing: border-box;
     display: -ms-flexbox;
 	display: -webkit-flex;
@@ -182,6 +194,7 @@ body {
 
 .location {
     background-color: lightcyan;
+	font-weight: 400;
 }
 
 .type, .house {
@@ -198,22 +211,33 @@ body {
 }
 
 .more {
+	@include transition(border-radius $anim-time ease);
+	border-radius: 0%;
 	a {
 		text-decoration: none;
-	}
-	a {
 		color: #365059;
-		text-shadow: 0px 1px 0px #7BB8CC;
+		text-shadow: 0px 1px 0px #5C7F8C;//#7BB8CC;
 		cursor:not-allowed;
+		@include transition(color $anim-time ease);
 	}
-	a.available {
+}
+
+.more.available {
+	a {
 		color: #03B1F3;
 		text-shadow: 0px 1px 0px #5C8A99;
-		cursor:not-allowed;
-	}
-	a.available:hover {
+		cursor:default;
 		
-	}
+	}	
+}
+
+.more.available:hover {
+	border-radius: 50%;
+	a {
+		color: #FF2C83;
+		text-shadow: 0px 1px 0px #995C75;
+		cursor: default;
+	}	
 }
 
 .price {
@@ -237,8 +261,30 @@ body {
 	.content {
 		text-align: justify;
 	}
+	
+	.content:before {
+		content: "\00A0";
+		display: inline;
+		background: linear-gradient(to right, rgba(7, 31, 39, 0), rgba(7, 31, 39, 0.7) 50%, rgba(7, 31, 39, 1) 90%, #071f27);
+		position: absolute;
+		right:0;
+		bottom:0;
+		width: 6em;
+		text-align: right;
+	}
+	
+	.content:after {
+		display: inline;
+		background: #071f27; 
+		height: 100%;
+		position: absolute;
+		width: 100%;		
+	}
 }
 
+
+
+/* 
 .ellipsis {
     background: linear-gradient(to right, rgba(7, 31, 39, 0), rgba(7, 31, 39, 0.7) 50%, rgba(7, 31, 39, 1) 90%, #071f27);
     position: absolute;
@@ -255,7 +301,7 @@ body {
     width: 100%;
 }
 
-.additional, .area {
+ */.additional, .area {
 	.content {
 		tbody {
 			text-align: left;
@@ -274,7 +320,6 @@ body {
 		td:first-child {
 			padding-right: 10px;
 		}
-		
 	}
 }
 
