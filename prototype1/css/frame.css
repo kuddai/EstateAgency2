@@ -1,57 +1,57 @@
-/* line 1, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 2, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .clearfix:before, .container:before, .clearfix:after, .container:after {
   content: " ";
   display: table; }
 
-/* line 5, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 6, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .clearfix:after, .container:after {
   clear: both; }
 
-/* line 9, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 10, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .col-1 {
   width: 8.33333%; }
 
-/* line 9, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 10, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .col-2 {
   width: 16.66667%; }
 
-/* line 9, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 10, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .col-3 {
   width: 25%; }
 
-/* line 9, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 10, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .col-4 {
   width: 33.33333%; }
 
-/* line 9, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 10, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .col-5 {
   width: 41.66667%; }
 
-/* line 9, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 10, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .col-6 {
   width: 50%; }
 
-/* line 9, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 10, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .col-7 {
   width: 58.33333%; }
 
-/* line 9, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 10, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .col-8 {
   width: 66.66667%; }
 
-/* line 9, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 10, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .col-9 {
   width: 75%; }
 
-/* line 9, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 10, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .col-10 {
   width: 83.33333%; }
 
-/* line 9, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 10, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .col-11 {
   width: 91.66667%; }
 
-/* line 9, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 10, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .col-12 {
   width: 100%; }
 
@@ -61,7 +61,7 @@
   position: relative;
 }
 */
-/* line 64, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 65, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 html, body {
   width: 100%;
   height: 100%;
@@ -70,13 +70,18 @@ html, body {
   box-sizing: border-box;
   position: relative; }
 
-/* line 73, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 74, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 body {
   font-family: 'Roboto', sans-serif; }
 
-/* line 162, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 220, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .location, .type, .price, .house, .more,
 .area, .description, .additional {
+  -webkit-transition: width 0.35s ease, height 0.35s ease, left 0.35s ease, top 0.35s ease;
+  -moz-transition: width 0.35s ease, height 0.35s ease, left 0.35s ease, top 0.35s ease;
+  -ms-transition: width 0.35s ease, height 0.35s ease, left 0.35s ease, top 0.35s ease;
+  -o-transition: width 0.35s ease, height 0.35s ease, left 0.35s ease, top 0.35s ease;
+  transition: width 0.35s ease, height 0.35s ease, left 0.35s ease, top 0.35s ease;
   position: absolute;
   text-align: center;
   font-weight: 300;
@@ -90,94 +95,86 @@ body {
   align-items: center;
   justify-content: center; }
 
-/* line 179, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 238, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .card {
   padding: 15px;
   box-shadow: 2px 2px 6px #bcbcbc;
   box-sizing: border-box;
   position: relative; }
 
-/* line 186, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 245, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .type, .house, .price, .location {
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4); }
 
-/* line 190, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 249, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .more, .description {
   box-shadow: 1px 1px 2px rgba(69, 95, 105, 0.86); }
 
-/* line 195, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 254, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .location {
   background-color: lightcyan;
   font-weight: 400; }
 
-/* line 200, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 259, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .type, .house {
   color: white;
   background-color: #03B1F3; }
 
-/* line 205, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 264, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .description, .more {
   background-color: #071f27; }
 
-/* line 209, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 268, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .description {
   color: white; }
 
-/* line 213, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
-.more {
-  -webkit-transition: border-radius 0.35s ease;
-  -moz-transition: border-radius 0.35s ease;
-  -ms-transition: border-radius 0.35s ease;
-  -o-transition: border-radius 0.35s ease;
-  transition: border-radius 0.35s ease;
-  border-radius: 0%; }
-  /* line 216, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
-  .more a {
-    text-decoration: none;
-    color: #365059;
-    text-shadow: 0px 1px 0px #5C7F8C;
-    cursor: not-allowed;
-    -webkit-transition: color 0.35s ease;
-    -moz-transition: color 0.35s ease;
-    -ms-transition: color 0.35s ease;
-    -o-transition: color 0.35s ease;
-    transition: color 0.35s ease; }
+/* line 277, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+.more a {
+  -webkit-transition: color 0.35s ease;
+  -moz-transition: color 0.35s ease;
+  -ms-transition: color 0.35s ease;
+  -o-transition: color 0.35s ease;
+  transition: color 0.35s ease;
+  text-decoration: none;
+  color: #365059;
+  text-shadow: 0px 1px 0px #5C7F8C;
+  cursor: not-allowed; }
 
-/* line 226, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 284, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .more.available a {
   color: #03B1F3;
   text-shadow: 0px 1px 0px #5C8A99;
   cursor: default; }
 
-/* line 234, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
-.more.available:hover {
-  border-radius: 50%; }
-  /* line 236, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
-  .more.available:hover a {
-    color: #FF2C83;
-    text-shadow: 0px 1px 0px #995C75;
-    cursor: default; }
+/* line 289, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+.more.available a:hover {
+  color: #FF2C83;
+  text-shadow: 0px 1px 0px #995C75;
+  cursor: pointer; }
 
-/* line 243, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 296, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .price {
   color: white;
   background-color: #ff2c83; }
 
-/* line 248, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 301, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .area, .additional {
   background-color: white; }
 
-/* line 253, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 305, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+.content {
+  overflow: hidden; }
+
+/* line 310, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .description .content, .additional .content, .area .content {
-  overflow: hidden;
   position: relative;
   font-weight: 300; }
 
-/* line 261, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 317, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .description .content {
   text-align: justify; }
 
-/* line 265, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 321, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .description .content:before {
   content: "\00A0";
   display: inline;
@@ -188,7 +185,7 @@ body {
   width: 6em;
   text-align: right; }
 
-/* line 276, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 332, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .description .content:after {
   display: inline;
   background: #071f27;
@@ -196,130 +193,469 @@ body {
   position: absolute;
   width: 100%; }
 
-/* 
-.ellipsis {
-    background: linear-gradient(to right, rgba(7, 31, 39, 0), rgba(7, 31, 39, 0.7) 50%, rgba(7, 31, 39, 1) 90%, #071f27);
-    position: absolute;
-    right:0;
-    bottom:0;
-    width: 6em;
-    text-align: right;
-}
-
-.fill {
-    background: #071f27; 
-    height: 100%;
-    position: absolute;
-    width: 100%;
-}
-
- */
-/* line 306, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 343, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .additional .content tbody, .area .content tbody {
   text-align: left; }
 
-/* line 309, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 346, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .additional .content thead, .area .content thead {
   text-align: center; }
 
-/* line 313, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 350, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .additional .content table, .area .content table {
   table-layout: fixed;
   border-collapse: collapse; }
 
-/* line 317, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 354, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .additional .content td, .area .content td {
   padding: 0px; }
 
-/* line 320, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 357, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .additional .content td:first-child, .area .content td:first-child {
   padding-right: 10px; }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  /* line 328, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+  /* line 365, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
   .container {
-    width: 750px; } }
+    width: 750px; }
+  /* line 113, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+  .offer {
+    -webkit-transition: width 0.35s ease, height 0.35s ease;
+    -moz-transition: width 0.35s ease, height 0.35s ease;
+    -ms-transition: width 0.35s ease, height 0.35s ease;
+    -o-transition: width 0.35s ease, height 0.35s ease;
+    transition: width 0.35s ease, height 0.35s ease;
+    position: relative;
+    width: 608px;
+    height: 200.66667px; }
+    /* line 121, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .type, .offer .price, .offer .house, .offer .more {
+      width: 98.83333px;
+      height: 98.83333px;
+      font-size: 21.328px;
+      line-height: 26.66px; }
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      .offer .type .content, .offer .price .content, .offer .house .content, .offer .more .content {
+        max-width: 68.83333px;
+        max-height: 79.98px; }
+    /* line 126, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .more .content {
+      font-size: 34.41667px; }
+    /* line 130, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .description {
+      width: 200.66667px;
+      height: 98.83333px;
+      font-size: 16px;
+      line-height: 20px; }
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      .offer .description .content {
+        max-width: 170.66667px;
+        max-height: 60px; }
+    /* line 134, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .additional, .offer .area {
+      width: 98.83333px;
+      height: 98.83333px;
+      font-size: 16px;
+      line-height: 20px; }
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      .offer .additional .content, .offer .area .content {
+        max-width: 68.83333px;
+        max-height: 60px; }
+    /* line 138, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .location {
+      width: 200.66667px;
+      height: 200.66667px;
+      font-size: 28.448px;
+      line-height: 35.56px; }
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      .offer .location .content {
+        max-width: 170.66667px;
+        max-height: 177.8px; }
+    /* line 143, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .location, .offer .type, .offer .price, .offer .house, .offer .area {
+      top: 0; }
+    /* line 147, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .description, .offer .additional, .offer .more {
+      top: 101.83333px; }
+    /* line 151, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .location {
+      left: 0; }
+    /* line 155, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .type, .offer .description {
+      left: 203.66667px; }
+    /* line 159, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .price {
+      left: 305.5px; }
+    /* line 163, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .house, .offer .additional {
+      left: 407.33333px; }
+    /* line 167, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .area, .offer .more {
+      left: 509.16667px; }
+  /* line 172, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+  .offer.expanded {
+    width: 608px;
+    height: 452.25px; }
+    /* line 176, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .type, .offer.expanded .price, .offer.expanded .house, .offer.expanded .more {
+      width: 140.75px;
+      height: 140.75px;
+      font-size: 21.328px;
+      line-height: 26.66px; }
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      .offer.expanded .type .content, .offer.expanded .price .content, .offer.expanded .house .content, .offer.expanded .more .content {
+        max-width: 80.75px;
+        max-height: 79.98px; }
+    /* line 180, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .more .content {
+      font-size: 40.375px; }
+    /* line 183, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .description {
+      width: 296.5px;
+      height: 140.75px;
+      font-size: 16px;
+      line-height: 20px; }
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      .offer.expanded .description .content {
+        max-width: 236.5px;
+        max-height: 80px; }
+    /* line 186, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .additional, .offer.expanded .area {
+      width: 140.75px;
+      height: 140.75px;
+      font-size: 16px;
+      line-height: 20px; }
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      .offer.expanded .additional .content, .offer.expanded .area .content {
+        max-width: 80.75px;
+        max-height: 80px; }
+    /* line 189, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .location {
+      width: 296.5px;
+      height: 296.5px;
+      font-size: 28.448px;
+      line-height: 35.56px; }
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      .offer.expanded .location .content {
+        max-width: 236.5px;
+        max-height: 248.92px; }
+    /* line 194, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .location, .offer.expanded .price, .offer.expanded .house {
+      top: 0; }
+    /* line 197, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .type, .offer.expanded .area {
+      top: 155.75px; }
+    /* line 200, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .description, .offer.expanded .additional {
+      top: 311.5px; }
+    /* line 203, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .more {
+      top: 311.5px; }
+    /* line 206, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .location, .offer.expanded .description {
+      left: 0; }
+    /* line 209, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .price, .offer.expanded .type, .offer.expanded .additional {
+      left: 311.5px; }
+    /* line 212, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .house, .offer.expanded .area, .offer.expanded .more {
+      left: 467.25px; } }
 
 @media (min-width: 992px) and (max-width: 1999px) {
-  /* line 333, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+  /* line 371, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
   .container {
-    width: 970px; } }
+    width: 970px; }
+  /* line 113, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+  .offer {
+    -webkit-transition: width 0.35s ease, height 0.35s ease;
+    -moz-transition: width 0.35s ease, height 0.35s ease;
+    -ms-transition: width 0.35s ease, height 0.35s ease;
+    -o-transition: width 0.35s ease, height 0.35s ease;
+    transition: width 0.35s ease, height 0.35s ease;
+    position: relative;
+    width: 908px;
+    height: 300.66667px; }
+    /* line 121, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .type, .offer .price, .offer .house, .offer .more {
+      width: 148.83333px;
+      height: 148.83333px;
+      font-size: 21.328px;
+      line-height: 26.66px; }
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      .offer .type .content, .offer .price .content, .offer .house .content, .offer .more .content {
+        max-width: 118.83333px;
+        max-height: 106.64px; }
+    /* line 126, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .more .content {
+      font-size: 59.41667px; }
+    /* line 130, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .description {
+      width: 300.66667px;
+      height: 148.83333px;
+      font-size: 16px;
+      line-height: 20px; }
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      .offer .description .content {
+        max-width: 270.66667px;
+        max-height: 120px; }
+    /* line 134, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .additional, .offer .area {
+      width: 148.83333px;
+      height: 148.83333px;
+      font-size: 16px;
+      line-height: 20px; }
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      .offer .additional .content, .offer .area .content {
+        max-width: 118.83333px;
+        max-height: 120px; }
+    /* line 138, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .location {
+      width: 300.66667px;
+      height: 300.66667px;
+      font-size: 28.448px;
+      line-height: 35.56px; }
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      .offer .location .content {
+        max-width: 270.66667px;
+        max-height: 284.48px; }
+    /* line 143, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .location, .offer .type, .offer .price, .offer .house, .offer .area {
+      top: 0; }
+    /* line 147, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .description, .offer .additional, .offer .more {
+      top: 151.83333px; }
+    /* line 151, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .location {
+      left: 0; }
+    /* line 155, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .type, .offer .description {
+      left: 303.66667px; }
+    /* line 159, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .price {
+      left: 455.5px; }
+    /* line 163, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .house, .offer .additional {
+      left: 607.33333px; }
+    /* line 167, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .area, .offer .more {
+      left: 759.16667px; }
+  /* line 172, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+  .offer.expanded {
+    width: 908px;
+    height: 677.25px; }
+    /* line 176, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .type, .offer.expanded .price, .offer.expanded .house, .offer.expanded .more {
+      width: 215.75px;
+      height: 215.75px;
+      font-size: 21.328px;
+      line-height: 26.66px; }
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      .offer.expanded .type .content, .offer.expanded .price .content, .offer.expanded .house .content, .offer.expanded .more .content {
+        max-width: 155.75px;
+        max-height: 159.96px; }
+    /* line 180, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .more .content {
+      font-size: 77.875px; }
+    /* line 183, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .description {
+      width: 446.5px;
+      height: 215.75px;
+      font-size: 16px;
+      line-height: 20px; }
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      .offer.expanded .description .content {
+        max-width: 386.5px;
+        max-height: 160px; }
+    /* line 186, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .additional, .offer.expanded .area {
+      width: 215.75px;
+      height: 215.75px;
+      font-size: 16px;
+      line-height: 20px; }
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      .offer.expanded .additional .content, .offer.expanded .area .content {
+        max-width: 155.75px;
+        max-height: 160px; }
+    /* line 189, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .location {
+      width: 446.5px;
+      height: 446.5px;
+      font-size: 28.448px;
+      line-height: 35.56px; }
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      .offer.expanded .location .content {
+        max-width: 386.5px;
+        max-height: 391.16px; }
+    /* line 194, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .location, .offer.expanded .price, .offer.expanded .house {
+      top: 0; }
+    /* line 197, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .type, .offer.expanded .area {
+      top: 230.75px; }
+    /* line 200, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .description, .offer.expanded .additional {
+      top: 461.5px; }
+    /* line 203, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .more {
+      top: 461.5px; }
+    /* line 206, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .location, .offer.expanded .description {
+      left: 0; }
+    /* line 209, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .price, .offer.expanded .type, .offer.expanded .additional {
+      left: 461.5px; }
+    /* line 212, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .house, .offer.expanded .area, .offer.expanded .more {
+      left: 692.25px; } }
 
-@media (min-width: 1200px) {
-  /* line 338, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+@media (min-width: 1199px) {
+  /* line 377, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
   .container {
     width: 1170px; }
-  /* line 341, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+  /* line 113, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
   .offer {
+    -webkit-transition: width 0.35s ease, height 0.35s ease;
+    -moz-transition: width 0.35s ease, height 0.35s ease;
+    -ms-transition: width 0.35s ease, height 0.35s ease;
+    -o-transition: width 0.35s ease, height 0.35s ease;
+    transition: width 0.35s ease, height 0.35s ease;
     position: relative;
     width: 1108px;
     height: 367.33333px; }
-    /* line 111, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    /* line 121, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
     .offer .type, .offer .price, .offer .house, .offer .more {
       width: 182.16667px;
       height: 182.16667px;
       font-size: 21.328px;
       line-height: 26.66px; }
-      /* line 101, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
       .offer .type .content, .offer .price .content, .offer .house .content, .offer .more .content {
         max-width: 152.16667px;
         max-height: 159.96px; }
-    /* line 116, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
-    .offer .more {
+    /* line 126, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer .more .content {
       font-size: 76.08333px; }
-    /* line 120, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    /* line 130, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
     .offer .description {
       width: 367.33333px;
       height: 182.16667px;
       font-size: 16px;
       line-height: 20px; }
-      /* line 101, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
       .offer .description .content {
         max-width: 337.33333px;
         max-height: 160px; }
-    /* line 124, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    /* line 134, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
     .offer .additional, .offer .area {
       width: 182.16667px;
       height: 182.16667px;
       font-size: 16px;
       line-height: 20px; }
-      /* line 101, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
       .offer .additional .content, .offer .area .content {
         max-width: 152.16667px;
         max-height: 160px; }
-    /* line 128, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    /* line 138, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
     .offer .location {
       width: 367.33333px;
       height: 367.33333px;
       font-size: 28.448px;
       line-height: 35.56px; }
-      /* line 101, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
       .offer .location .content {
         max-width: 337.33333px;
         max-height: 320.04px; }
-    /* line 132, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    /* line 143, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
     .offer .location, .offer .type, .offer .price, .offer .house, .offer .area {
       top: 0; }
-    /* line 136, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    /* line 147, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
     .offer .description, .offer .additional, .offer .more {
       top: 185.16667px; }
-    /* line 140, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    /* line 151, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
     .offer .location {
       left: 0; }
-    /* line 144, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    /* line 155, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
     .offer .type, .offer .description {
       left: 370.33333px; }
-    /* line 148, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    /* line 159, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
     .offer .price {
       left: 555.5px; }
-    /* line 152, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    /* line 163, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
     .offer .house, .offer .additional {
       left: 740.66667px; }
-    /* line 156, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    /* line 167, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
     .offer .area, .offer .more {
-      left: 925.83333px; } }
+      left: 925.83333px; }
+  /* line 172, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+  .offer.expanded {
+    width: 1108px;
+    height: 827.25px; }
+    /* line 176, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .type, .offer.expanded .price, .offer.expanded .house, .offer.expanded .more {
+      width: 265.75px;
+      height: 265.75px;
+      font-size: 21.328px;
+      line-height: 26.66px; }
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      .offer.expanded .type .content, .offer.expanded .price .content, .offer.expanded .house .content, .offer.expanded .more .content {
+        max-width: 205.75px;
+        max-height: 213.28px; }
+    /* line 180, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .more .content {
+      font-size: 102.875px; }
+    /* line 183, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .description {
+      width: 546.5px;
+      height: 265.75px;
+      font-size: 16px;
+      line-height: 20px; }
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      .offer.expanded .description .content {
+        max-width: 486.5px;
+        max-height: 200px; }
+    /* line 186, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .additional, .offer.expanded .area {
+      width: 265.75px;
+      height: 265.75px;
+      font-size: 16px;
+      line-height: 20px; }
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      .offer.expanded .additional .content, .offer.expanded .area .content {
+        max-width: 205.75px;
+        max-height: 200px; }
+    /* line 189, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .location {
+      width: 546.5px;
+      height: 546.5px;
+      font-size: 28.448px;
+      line-height: 35.56px; }
+      /* line 107, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+      .offer.expanded .location .content {
+        max-width: 486.5px;
+        max-height: 497.84px; }
+    /* line 194, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .location, .offer.expanded .price, .offer.expanded .house {
+      top: 0; }
+    /* line 197, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .type, .offer.expanded .area {
+      top: 280.75px; }
+    /* line 200, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .description, .offer.expanded .additional {
+      top: 561.5px; }
+    /* line 203, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .more {
+      top: 561.5px; }
+    /* line 206, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .location, .offer.expanded .description {
+      left: 0; }
+    /* line 209, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .price, .offer.expanded .type, .offer.expanded .additional {
+      left: 561.5px; }
+    /* line 212, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+    .offer.expanded .house, .offer.expanded .area, .offer.expanded .more {
+      left: 842.25px; } }
 
-/* line 345, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 383, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .container {
   box-sizing: border-box;
   margin-right: auto;

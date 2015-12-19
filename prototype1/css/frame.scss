@@ -1,3 +1,4 @@
+
 .clearfix:before, .clearfix:after {
     content: " ";
     display: table;
@@ -83,13 +84,18 @@ body {
     $y: $text-margin;
     $b: ($w - 2 * $x) / 3;
     $a: ($b - $x) / 2;
-    
+	//e - extended
+	$xe: 5 * $x;
+	$ye: 2 * $y;
+	$be:($w - $xe) / 2;
+	$ae:($w - 3 * $xe) / 4;
+    $ce: 2/3 * $be; //4 to 6
     
     @function shift($i) {
         @return 1 * $b + ($i - 1) * $a + $i * $x;
     }
     
-    @mixin rp-block($wd, $ht, $level) {
+    @mixin rp-block($wd, $ht, $level, $padding) {
         $fs: type-scale($level);
         $lh: line-height($level);
         width: $wd;
@@ -99,67 +105,120 @@ body {
 		//without that with just padding it is very hard to center
 		//everything properly in case of possible content overflow
         .content {
-            max-width: $wd - 2 * $y;
-            max-height: round(($ht - 2 * $y) / $lh) * $lh;
+            max-width: $wd - 2 * $padding;
+            max-height: round(($ht - 2 * $padding) / $lh) * $lh;
         }
     }
-    
-    position: relative;
-    width: $w;
-    height: $b;
-    
-    .type, .price, .house, .more {
-        @include rp-block($a, $a, 1);
-    }
 	
-	//to make arrow big
-	.more {
-		font-size: ($a - 2 * $y) * 0.5;
+	.offer {
+		@include transition(width $anim-time ease, height $anim-time ease);
+		position: relative;
+		width: $w;
+		height: $b;
+
+		//sizes
+		//normal
+		.type, .price, .house, .more {
+			@include rp-block($a, $a, 1, $y);
+		}
+		
+		//to make arrow big
+		.more .content {
+			font-size: ($a - 2 * $y) * 0.5;
+		}
+
+		.description {
+			@include rp-block($b, $a, 0, $y);
+		}
+
+		.additional, .area {
+			@include rp-block($a, $a, 0, $y);
+		}
+
+		.location {
+			@include rp-block($b, $b, 2, $y);
+		}
+
+		//position
+		.location, .type, .price, .house, .area {
+			top: 0;
+		}    
+
+		.description, .additional, .more {
+			top: $a + $x;
+		}
+
+		.location {
+			left: 0;
+		}
+
+		.type, .description {
+			left: shift(1);
+		}
+
+		.price {
+			left: shift(2);
+		}
+
+		.house, .additional {
+			left: shift(3);
+		}
+
+		.area, .more {
+			left: shift(4);
+		} 
 	}
-    
-    .description {
-        @include rp-block($b, $a, 0);
-    }
-    
-    .additional, .area {
-        @include rp-block($a, $a, 0);
-    }
-    
-    .location {
-        @include rp-block($b, $b, 2);
-    }
+	//expanded
+	.offer.expanded {
+		width: $w;
+		height: $be + $xe + $ae;
+		//sizes
+		.type, .price, .house, .more {
+			@include rp-block($ae, $ae, 1, $ye);
+		}
+		//to make arrow big
+		.more .content {
+			font-size: ($ae - 2 * $ye) * 0.5;
+		}
+		.description {
+			@include rp-block($be, $ae, 0, $ye);
+		}
+		.additional, .area {
+			@include rp-block($ae, $ae, 0, $ye);
+		}
+		.location {
+			@include rp-block($be, $be, 2, $ye);
+		}
 
-    .location, .type, .price, .house, .area {
-        top: 0;
-    }    
+		//position
+		.location, .price, .house {
+			top:  0;
+		}
+		.type, .area {
+			top: $ae + $xe;
+		}
+		.description, .additional {
+			top: $be + $xe;
+		}
+		.more {
+			top: $ae + $ae + 2 * $xe;
+		}
+		.location, .description {
+			left: 0;
+		}
+		.price, .type, .additional {
+			left: $be + $xe;
+		}
+		.house, .area, .more {
+			left: $be + $ae + 2 * $xe;
+		}
+	}
 
-    .description, .additional, .more {
-        top: $a + $x;
-    }
-
-    .location {
-        left: 0;
-    }
-
-    .type, .description {
-        left: shift(1);
-    }
-
-    .price {
-        left: shift(2);
-    }
-
-    .house, .additional {
-        left: shift(3);
-    }
-
-    .area, .more {
-        left: shift(4);
-    } 
 }
 
 .location, .type, .price, .house, .more,
 .area, .description, .additional {
+	@include transition(width $anim-time ease, height $anim-time ease, left $anim-time ease, top $anim-time ease);
     position: absolute;
     text-align: center;
 	font-weight: 300;
@@ -210,34 +269,28 @@ body {
 	color: white;
 }
 
+
+
 .more {
-	@include transition(border-radius $anim-time ease);
-	border-radius: 0%;
+	//@include transition(border-radius $anim-time ease);
+	//border-radius: 0%;
 	a {
+		@include transition(color $anim-time ease);
 		text-decoration: none;
 		color: #365059;
 		text-shadow: 0px 1px 0px #5C7F8C;//#7BB8CC;
 		cursor:not-allowed;
-		@include transition(color $anim-time ease);
 	}
-}
-
-.more.available {
-	a {
+	&.available a {
 		color: #03B1F3;
 		text-shadow: 0px 1px 0px #5C8A99;
-		cursor:default;
-		
-	}	
-}
-
-.more.available:hover {
-	border-radius: 50%;
-	a {
+		cursor:default;		
+	}
+	&.available a:hover {
 		color: #FF2C83;
 		text-shadow: 0px 1px 0px #995C75;
-		cursor: default;
-	}	
+		cursor: pointer;		
+	}
 }
 
 .price {
@@ -249,9 +302,12 @@ body {
     background-color: white;
 }
 
+.content {
+	overflow: hidden;
+}
+
 .description, .additional, .area {
     .content {
-		overflow: hidden;
     	position: relative;
 		font-weight: 300;
     }
@@ -282,26 +338,7 @@ body {
 	}
 }
 
-
-
-/* 
-.ellipsis {
-    background: linear-gradient(to right, rgba(7, 31, 39, 0), rgba(7, 31, 39, 0.7) 50%, rgba(7, 31, 39, 1) 90%, #071f27);
-    position: absolute;
-    right:0;
-    bottom:0;
-    width: 6em;
-    text-align: right;
-}
-
-.fill {
-    background: #071f27; 
-    height: 100%;
-    position: absolute;
-    width: 100%;
-}
-
- */.additional, .area {
+.additional, .area {
 	.content {
 		tbody {
 			text-align: left;
@@ -328,20 +365,21 @@ body {
     .container {
         width: 750px;
     }
+	@include rp-offer(608px);
 }
 @media (min-width: 992px) and (max-width: 1999px) {
     .container {
         width: 970px;
     }
+	@include rp-offer(908px);
 }
-@media (min-width: 1200px) {
+@media (min-width: 1199px) {
     .container {
         width: 1170px;
     }
-    .offer {
-        @include rp-offer(1108px);
-    }
+    @include rp-offer(1108px);
 }
+
 .container {
     @extend .clearfix;
     box-sizing: border-box;
