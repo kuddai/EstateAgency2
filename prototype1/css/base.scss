@@ -2,3 +2,77 @@ $anim-time: 0.5s;
 $base-font-size: 16px;
 $blue: #03B1F3;
 $crimson: #FF2C83;
+
+$type-settings: (
+  -2: (
+	font-size: 0.75  * $base-font-size
+  ), 
+  -1: (
+    font-size: 0.875 * $base-font-size
+  ),
+  0: (
+    font-size: $base-font-size
+  ),
+  1: (
+    font-size: 1.333 * $base-font-size
+  ),
+  2: (
+    font-size: 1.778 * $base-font-size
+  ),
+  3: (
+    font-size: 2.368 * $base-font-size
+  )
+);
+
+@function type-scale($level) {
+  @return map-get(
+    map-get($type-settings, $level), 'font-size');
+}
+
+@function line-height($level) {
+  @return map-get(
+    map-get($type-settings, $level), 'font-size') * 1.25;
+}
+
+@mixin type-setting($level) {
+  font-size: type-scale($level);
+  line-height: line-height($level);
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	position: relative;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+
+.container {
+    @extend .clearfix;
+    box-sizing: border-box;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}

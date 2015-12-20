@@ -1,0 +1,80 @@
+@import "base";
+@import "card";
+@import "main-card";
+@import "main-offer";
+
+
+//from bootstap
+@media (min-width: 768px) {
+	@include main-card();
+	
+    .container {
+        width: 750px;
+    }
+	
+	$parameters : (
+		'margin': 3px,
+		'padding': 8px,
+		'small-text-level' : -2,
+		'medium-text-level': -1,
+		'big-text-level'   : 1,
+		'tr-border': 5px
+	);
+	$parameters_expanded : (
+		'margin': 9px,
+		'padding': 10px,
+		'small-text-level' : -2,
+		'medium-text-level': 0,
+		'big-text-level'   : 2,
+		'ratio': 1
+	);
+	@include main-offer(690px, $parameters, $parameters_expanded);
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+	
+	$parameters : (
+		'margin': 3px,
+		'padding': 10px,
+		'small-text-level' : -1,
+		'medium-text-level': 0,
+		'big-text-level'   : 2,
+		'tr-border': 3px
+	);
+	$parameters_expanded : (
+		'margin': 12px,
+		'padding': 15px,
+		'small-text-level' : -1,
+		'medium-text-level': 1,
+		'big-text-level'   : 2,
+		'ratio': 1
+	);
+	@include main-offer(908px, $parameters, $parameters_expanded);
+}
+
+@media (min-width: 1199px) {
+    .container {
+        width: 1170px;
+    }
+	
+	$parameters : (
+		'margin': 3px,
+		'padding': 15px,
+		'small-text-level' : 0,
+		'medium-text-level': 1,
+		'big-text-level'   : 2,
+		'tr-border': 3px
+	);
+	$parameters_expanded : (
+		'margin': 15px,
+		'padding': 30px,
+		'small-text-level' : 0,
+		'medium-text-level': 1,
+		'big-text-level'   : 2,
+		'ratio': 1
+	);
+    @include main-offer(1108px, $parameters, $parameters_expanded);
+}

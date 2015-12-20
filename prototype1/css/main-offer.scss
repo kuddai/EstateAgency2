@@ -1,0 +1,170 @@
+@import "base";
+
+@mixin main-offer($offer_width, $parameters, $parameters_expanded) {
+    //tricky part 
+    //choose a, b so that there is same margin between block
+    //horizontally and vertically. 
+    $w: $offer_width;
+    $x: map-get($parameters, 'margin');
+    $y: map-get($parameters, 'padding');
+    $b: ($w - 2 * $x) / 3;// size of the large blocks
+    $a: ($b - $x) / 2;//size of small blocks
+	//text levels
+	$sm-t: map-get($parameters, 'small-text-level');
+	$md-t: map-get($parameters, 'medium-text-level');
+	$bg-t: map-get($parameters, 'big-text-level');
+	
+	//e - extended
+	$xe: map-get($parameters_expanded, 'margin');
+	$ye: map-get($parameters_expanded, 'padding');
+	$be:($w - $xe) / 2;
+	$ae:($w - 3 * $xe) / 4;
+    $ce: map-get($parameters_expanded, 'ratio') * $ae; //4 to 6 //size of semi blocks
+	//text levels
+	$sm-te: map-get($parameters_expanded, 'small-text-level');
+	$md-te: map-get($parameters_expanded, 'medium-text-level');
+	$bg-te: map-get($parameters_expanded, 'big-text-level');
+    
+    @function shift($i) {
+        @return 1 * $b + ($i - 1) * $a + $i * $x;
+    }
+    
+    @mixin rp-block($wd, $ht, $level, $padding) {
+        $fs: type-scale($level);
+        $lh: line-height($level);
+        width: $wd;
+        height: $ht;
+        font-size: $fs;
+        line-height: $lh;
+		//without that with just padding it is very hard to center
+		//everything properly in case of possible content overflow
+        .content {
+            max-width: $wd - 2 * $padding;
+            max-height: round(($ht - 2 * $padding) / $lh) * $lh;
+        }
+    }
+	
+	.offer {
+		@include transition(width $anim-time ease, height $anim-time ease);
+		position: relative;
+		width: $w;
+		height: $b;
+		
+				
+		//to make arrow big
+		.more .content {
+			font-size: ($a - 2 * $y) * 0.5;
+		}
+		
+		.additional, .area {
+			.content tr {
+				border: map-get($parameters, 'tr-border') solid transparent;
+			}
+		}
+		
+		.extra {
+			//only with that configuraton the table computes size properly
+			//in the expanded state
+			position: absolute; //to remove from dom flow
+			visibility: hidden; //to hide this
+		}
+
+		//sizes
+		//normal
+		.type, .price, .house, .more {
+			@include rp-block($a, $a, $md-t, $y);
+		}
+
+		.description {
+			@include rp-block($b, $a, $sm-t, $y);
+		}
+
+		.additional, .area {
+			@include rp-block($a, $a, $sm-t, $y);
+		}
+
+		.location {
+			@include rp-block($b, $b, $bg-t, $y);
+		}
+
+		//position
+		.location, .type, .price, .house, .area {
+			top: 0;
+		}    
+
+		.description, .additional, .more {
+			top: $a + $x;
+		}
+
+		.location {
+			left: 0;
+		}
+
+		.type, .description {
+			left: shift(1);
+		}
+
+		.price {
+			left: shift(2);
+		}
+
+		.house, .additional {
+			left: shift(3);
+		}
+
+		.area, .more {
+			left: shift(4);
+		} 
+	}
+	//expanded
+	.offer.expanded {
+		width: $w;
+		height: $be + $xe + $ae;
+		
+		.extra {
+			visibility: visible;
+			position: inherit;
+		}
+		
+		//sizes
+		.type, .price, .house, .more {
+			@include rp-block($ae, $ae, $md-te, $ye);
+		}
+		//to make arrow big
+		.more .content {
+			font-size: ($ae - 2 * $ye) * 0.5;
+		}
+		.description {
+			@include rp-block($be, $ce, $sm-te, $ye);
+		}
+		.additional, .area {
+			@include rp-block($ae, $ce, $sm-te, $ye);
+		}
+		.location {
+			@include rp-block($be, $be, $bg-te, $ye);
+		}
+
+		//position
+		.location, .price, .house {
+			top:  0;
+		}
+		.type, .area {
+			top: $ae + $xe;
+		}
+		.description, .additional {
+			top: $be + $xe;
+		}
+		.more {
+			top: $ae + $ce + 2 * $xe;
+		}
+		.location, .description {
+			left: 0;
+		}
+		.price, .type, .additional {
+			left: $be + $xe;
+		}
+		.house, .area, .more {
+			left: $be + $ae + 2 * $xe;
+		}
+	}
+}
