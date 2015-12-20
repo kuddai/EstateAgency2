@@ -13,7 +13,7 @@
     }
 }
 
-$anim-time: 0.35s;
+$anim-time: 0.5s;
 $base-font-size: 16px;
 
 $type-settings: (
@@ -269,11 +269,7 @@ body {
 	color: white;
 }
 
-
-
 .more {
-	//@include transition(border-radius $anim-time ease);
-	//border-radius: 0%;
 	a {
 		@include transition(color $anim-time ease);
 		text-decoration: none;
@@ -291,6 +287,27 @@ body {
 		text-shadow: 0px 1px 0px #995C75;
 		cursor: pointer;		
 	}
+}
+
+.offer .more .content {
+	@include transition(transform $anim-time ease);
+	//@include transition(-ms-transform $anim-time linear);
+	//@include transition(-o-transform $anim-time linear);
+	//@include transition(-webkit-transform $anim-time linear);
+	//@include transition(-moz-transform $anim-time linear);
+		    transform: rotate(0deg);
+	//     -o-transform: rotate(0deg);
+	//    -ms-transform: rotate(0deg);
+	//   -moz-transform: rotate(0deg);
+	//-webkit-transform: rotate(0deg);
+}
+
+.offer.expanded .more .content {
+		    transform: rotate(180deg);
+	//     -o-transform: rotate(180deg);
+	//    -ms-transform: rotate(180deg);
+	//   -moz-transform: rotate(180deg);
+	//-webkit-transform: rotate(180deg);
 }
 
 .price {

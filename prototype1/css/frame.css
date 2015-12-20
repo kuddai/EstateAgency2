@@ -77,11 +77,11 @@ body {
 /* line 220, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .location, .type, .price, .house, .more,
 .area, .description, .additional {
-  -webkit-transition: width 0.35s ease, height 0.35s ease, left 0.35s ease, top 0.35s ease;
-  -moz-transition: width 0.35s ease, height 0.35s ease, left 0.35s ease, top 0.35s ease;
-  -ms-transition: width 0.35s ease, height 0.35s ease, left 0.35s ease, top 0.35s ease;
-  -o-transition: width 0.35s ease, height 0.35s ease, left 0.35s ease, top 0.35s ease;
-  transition: width 0.35s ease, height 0.35s ease, left 0.35s ease, top 0.35s ease;
+  -webkit-transition: width 0.5s ease, height 0.5s ease, left 0.5s ease, top 0.5s ease;
+  -moz-transition: width 0.5s ease, height 0.5s ease, left 0.5s ease, top 0.5s ease;
+  -ms-transition: width 0.5s ease, height 0.5s ease, left 0.5s ease, top 0.5s ease;
+  -o-transition: width 0.5s ease, height 0.5s ease, left 0.5s ease, top 0.5s ease;
+  transition: width 0.5s ease, height 0.5s ease, left 0.5s ease, top 0.5s ease;
   position: absolute;
   text-align: center;
   font-weight: 300;
@@ -128,53 +128,66 @@ body {
 .description {
   color: white; }
 
-/* line 277, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 273, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .more a {
-  -webkit-transition: color 0.35s ease;
-  -moz-transition: color 0.35s ease;
-  -ms-transition: color 0.35s ease;
-  -o-transition: color 0.35s ease;
-  transition: color 0.35s ease;
+  -webkit-transition: color 0.5s ease;
+  -moz-transition: color 0.5s ease;
+  -ms-transition: color 0.5s ease;
+  -o-transition: color 0.5s ease;
+  transition: color 0.5s ease;
   text-decoration: none;
   color: #365059;
   text-shadow: 0px 1px 0px #5C7F8C;
   cursor: not-allowed; }
 
-/* line 284, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 280, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .more.available a {
   color: #03B1F3;
   text-shadow: 0px 1px 0px #5C8A99;
   cursor: default; }
 
-/* line 289, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 285, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .more.available a:hover {
   color: #FF2C83;
   text-shadow: 0px 1px 0px #995C75;
   cursor: pointer; }
 
-/* line 296, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 292, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+.offer .more .content {
+  -webkit-transition: transform 0.5s ease;
+  -moz-transition: transform 0.5s ease;
+  -ms-transition: transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transform: rotate(0deg); }
+
+/* line 305, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+.offer.expanded .more .content {
+  transform: rotate(180deg); }
+
+/* line 313, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .price {
   color: white;
   background-color: #ff2c83; }
 
-/* line 301, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 318, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .area, .additional {
   background-color: white; }
 
-/* line 305, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 322, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .content {
   overflow: hidden; }
 
-/* line 310, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 327, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .description .content, .additional .content, .area .content {
   position: relative;
   font-weight: 300; }
 
-/* line 317, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 334, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .description .content {
   text-align: justify; }
 
-/* line 321, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 338, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .description .content:before {
   content: "\00A0";
   display: inline;
@@ -185,7 +198,7 @@ body {
   width: 6em;
   text-align: right; }
 
-/* line 332, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 349, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .description .content:after {
   display: inline;
   background: #071f27;
@@ -193,38 +206,38 @@ body {
   position: absolute;
   width: 100%; }
 
-/* line 343, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 360, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .additional .content tbody, .area .content tbody {
   text-align: left; }
 
-/* line 346, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 363, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .additional .content thead, .area .content thead {
   text-align: center; }
 
-/* line 350, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 367, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .additional .content table, .area .content table {
   table-layout: fixed;
   border-collapse: collapse; }
 
-/* line 354, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 371, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .additional .content td, .area .content td {
   padding: 0px; }
 
-/* line 357, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 374, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .additional .content td:first-child, .area .content td:first-child {
   padding-right: 10px; }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  /* line 365, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+  /* line 382, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
   .container {
     width: 750px; }
   /* line 113, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
   .offer {
-    -webkit-transition: width 0.35s ease, height 0.35s ease;
-    -moz-transition: width 0.35s ease, height 0.35s ease;
-    -ms-transition: width 0.35s ease, height 0.35s ease;
-    -o-transition: width 0.35s ease, height 0.35s ease;
-    transition: width 0.35s ease, height 0.35s ease;
+    -webkit-transition: width 0.5s ease, height 0.5s ease;
+    -moz-transition: width 0.5s ease, height 0.5s ease;
+    -ms-transition: width 0.5s ease, height 0.5s ease;
+    -o-transition: width 0.5s ease, height 0.5s ease;
+    transition: width 0.5s ease, height 0.5s ease;
     position: relative;
     width: 608px;
     height: 200.66667px; }
@@ -362,16 +375,16 @@ body {
       left: 467.25px; } }
 
 @media (min-width: 992px) and (max-width: 1999px) {
-  /* line 371, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+  /* line 388, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
   .container {
     width: 970px; }
   /* line 113, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
   .offer {
-    -webkit-transition: width 0.35s ease, height 0.35s ease;
-    -moz-transition: width 0.35s ease, height 0.35s ease;
-    -ms-transition: width 0.35s ease, height 0.35s ease;
-    -o-transition: width 0.35s ease, height 0.35s ease;
-    transition: width 0.35s ease, height 0.35s ease;
+    -webkit-transition: width 0.5s ease, height 0.5s ease;
+    -moz-transition: width 0.5s ease, height 0.5s ease;
+    -ms-transition: width 0.5s ease, height 0.5s ease;
+    -o-transition: width 0.5s ease, height 0.5s ease;
+    transition: width 0.5s ease, height 0.5s ease;
     position: relative;
     width: 908px;
     height: 300.66667px; }
@@ -509,16 +522,16 @@ body {
       left: 692.25px; } }
 
 @media (min-width: 1199px) {
-  /* line 377, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+  /* line 394, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
   .container {
     width: 1170px; }
   /* line 113, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
   .offer {
-    -webkit-transition: width 0.35s ease, height 0.35s ease;
-    -moz-transition: width 0.35s ease, height 0.35s ease;
-    -ms-transition: width 0.35s ease, height 0.35s ease;
-    -o-transition: width 0.35s ease, height 0.35s ease;
-    transition: width 0.35s ease, height 0.35s ease;
+    -webkit-transition: width 0.5s ease, height 0.5s ease;
+    -moz-transition: width 0.5s ease, height 0.5s ease;
+    -ms-transition: width 0.5s ease, height 0.5s ease;
+    -o-transition: width 0.5s ease, height 0.5s ease;
+    transition: width 0.5s ease, height 0.5s ease;
     position: relative;
     width: 1108px;
     height: 367.33333px; }
@@ -655,7 +668,7 @@ body {
     .offer.expanded .house, .offer.expanded .area, .offer.expanded .more {
       left: 842.25px; } }
 
-/* line 383, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 400, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .container {
   box-sizing: border-box;
   margin-right: auto;
