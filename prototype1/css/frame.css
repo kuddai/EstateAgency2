@@ -154,40 +154,48 @@ body {
 
 /* line 292, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .offer .more .content {
-  -webkit-transition: transform 0.5s ease;
-  -moz-transition: transform 0.5s ease;
-  -ms-transition: transform 0.5s ease;
-  -o-transition: transform 0.5s ease;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  -moz-transition: -moz-transform 0.5s ease;
+  -ms-transition: -ms-transform 0.5s ease;
+  -o-transition: -o-transform 0.5s ease;
   transition: transform 0.5s ease;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
   transform: rotate(0deg); }
 
-/* line 305, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 307, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .offer.expanded .more .content {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
   transform: rotate(180deg); }
 
-/* line 313, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 315, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .price {
   color: white;
   background-color: #ff2c83; }
 
-/* line 318, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 320, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .area, .additional {
   background-color: white; }
 
-/* line 322, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 324, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .content {
   overflow: hidden; }
 
-/* line 327, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 329, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .description .content, .additional .content, .area .content {
   position: relative;
   font-weight: 300; }
 
-/* line 334, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 336, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .description .content {
   text-align: justify; }
 
-/* line 338, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 340, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .description .content:before {
   content: "\00A0";
   display: inline;
@@ -198,7 +206,7 @@ body {
   width: 6em;
   text-align: right; }
 
-/* line 349, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 351, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .description .content:after {
   display: inline;
   background: #071f27;
@@ -206,29 +214,29 @@ body {
   position: absolute;
   width: 100%; }
 
-/* line 360, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 362, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .additional .content tbody, .area .content tbody {
   text-align: left; }
 
-/* line 363, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 365, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .additional .content thead, .area .content thead {
   text-align: center; }
 
-/* line 367, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 369, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .additional .content table, .area .content table {
   table-layout: fixed;
   border-collapse: collapse; }
 
-/* line 371, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 373, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .additional .content td, .area .content td {
   padding: 0px; }
 
-/* line 374, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 376, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .additional .content td:first-child, .area .content td:first-child {
   padding-right: 10px; }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  /* line 382, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+  /* line 384, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
   .container {
     width: 750px; }
   /* line 113, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
@@ -375,7 +383,7 @@ body {
       left: 467.25px; } }
 
 @media (min-width: 992px) and (max-width: 1999px) {
-  /* line 388, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+  /* line 390, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
   .container {
     width: 970px; }
   /* line 113, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
@@ -522,7 +530,7 @@ body {
       left: 692.25px; } }
 
 @media (min-width: 1199px) {
-  /* line 394, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+  /* line 396, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
   .container {
     width: 1170px; }
   /* line 113, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
@@ -668,7 +676,7 @@ body {
     .offer.expanded .house, .offer.expanded .area, .offer.expanded .more {
       left: 842.25px; } }
 
-/* line 400, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
+/* line 402, /Users/kuddai/Documents/UoE/EstateAgancy2/prototype1/css/frame.scss */
 .container {
   box-sizing: border-box;
   margin-right: auto;

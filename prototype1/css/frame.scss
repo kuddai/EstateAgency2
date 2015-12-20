@@ -290,24 +290,26 @@ body {
 }
 
 .offer .more .content {
-	@include transition(transform $anim-time ease);
-	//@include transition(-ms-transform $anim-time linear);
-	//@include transition(-o-transform $anim-time linear);
-	//@include transition(-webkit-transform $anim-time linear);
-	//@include transition(-moz-transform $anim-time linear);
-		    transform: rotate(0deg);
-	//     -o-transform: rotate(0deg);
-	//    -ms-transform: rotate(0deg);
-	//   -moz-transform: rotate(0deg);
-	//-webkit-transform: rotate(0deg);
+	//@include transition(transform $anim-time ease);
+	-webkit-transition: -webkit-transform $anim-time ease;
+  	-moz-transition: -moz-transform $anim-time ease;
+  	-ms-transition: -ms-transform $anim-time ease;
+  	-o-transition: -o-transform $anim-time ease;
+  	transition: transform $anim-time ease;
+	
+	-webkit-transform: rotate(0deg);
+	   -moz-transform: rotate(0deg);
+	    -ms-transform: rotate(0deg);
+		 -o-transform: rotate(0deg);
+		    transform: rotate(0deg);	
 }
 
 .offer.expanded .more .content {
+	-webkit-transform: rotate(180deg);
+	   -moz-transform: rotate(180deg);
+	    -ms-transform: rotate(180deg);
+		 -o-transform: rotate(180deg);
 		    transform: rotate(180deg);
-	//     -o-transform: rotate(180deg);
-	//    -ms-transform: rotate(180deg);
-	//   -moz-transform: rotate(180deg);
-	//-webkit-transform: rotate(180deg);
 }
 
 .price {
