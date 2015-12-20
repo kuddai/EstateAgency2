@@ -7,6 +7,8 @@
     clear: both;
 }
 
+//columns
+
 @for $i from 1 through 12 {
     .col-#{$i} {
         width: 100%*$i/12;
@@ -15,6 +17,8 @@
 
 $anim-time: 0.5s;
 $base-font-size: 16px;
+$blue: #03B1F3;
+$crimson: #FF2C83;
 
 $type-settings: (
   -2: (
@@ -139,16 +143,30 @@ body {
 		position: relative;
 		width: $w;
 		height: $b;
+		
+				
+		//to make arrow big
+		.more .content {
+			font-size: ($a - 2 * $y) * 0.5;
+		}
+		
+		.additional, .area {
+			.content tr {
+				border: map-get($parameters, 'tr-border') solid transparent;
+			}
+		}
+		
+		.extra {
+			position: absolute;
+			visibility: hidden;
+			//visibility: collapse;
+			//display: none;
+		}
 
 		//sizes
 		//normal
 		.type, .price, .house, .more {
 			@include rp-block($a, $a, $md-t, $y);
-		}
-		
-		//to make arrow big
-		.more .content {
-			font-size: ($a - 2 * $y) * 0.5;
 		}
 
 		.description {
@@ -196,6 +214,12 @@ body {
 	.offer.expanded {
 		width: $w;
 		height: $be + $xe + $ae;
+		
+		.extra {
+			visibility: visible;
+			position: inherit;
+		}
+		
 		//sizes
 		.type, .price, .house, .more {
 			@include rp-block($ae, $ae, $md-te, $ye);
@@ -282,7 +306,7 @@ body {
 
 .type, .house {
     color: white;
-    background-color: #03B1F3;
+    background-color: $blue;
 }
 
 .description, .more {
@@ -302,12 +326,12 @@ body {
 		cursor:not-allowed;
 	}
 	&.available a {
-		color: #03B1F3;
+		color: $blue;
 		text-shadow: 0px 1px 0px #5C8A99;
 		cursor:default;		
 	}
 	&.available a:hover {
-		color: #FF2C83;
+		color: $crimson;
 		text-shadow: 0px 1px 0px #995C75;
 		cursor: pointer;		
 	}
@@ -338,7 +362,7 @@ body {
 
 .price {
     color : white;
-    background-color: #ff2c83;
+    background-color: $crimson;
 }
 
 .area, .additional {
@@ -355,18 +379,6 @@ body {
     	position: relative;
 		font-weight: 300;
     }
-}
-
-.additional, .area {
-	.content:after {
-		content: "\00A0";
-		background: white; 
-		height: 100%;
-		width: 100%;
-		position: absolute;
-		left: 0;
-		top: 98%;
-	}
 }
 
 .description {
@@ -412,6 +424,21 @@ body {
 	}
 }
 
+.offer.expanded .additional, .area {
+	.content {
+		td:first-child {
+			padding-right: 10px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.location, .type, .price, .house, .more,
+	.area, .description, .additional {
+		
+	}
+}
+
 //from bootstap
 @media (min-width: 768px) and (max-width: 991px) {
     .container {
@@ -422,7 +449,8 @@ body {
 		'padding': 8px,
 		'small-text-level' : -2,
 		'medium-text-level': -1,
-		'big-text-level'   : 1
+		'big-text-level'   : 1,
+		'tr-border': 5px
 	);
 	$parameters_expanded : (
 		'margin': 9px,
@@ -443,7 +471,8 @@ body {
 		'padding': 10px,
 		'small-text-level' : -1,
 		'medium-text-level': 0,
-		'big-text-level'   : 2
+		'big-text-level'   : 2,
+		'tr-border': 3px
 	);
 	$parameters_expanded : (
 		'margin': 12px,
@@ -464,7 +493,8 @@ body {
 		'padding': 15px,
 		'small-text-level' : 0,
 		'medium-text-level': 1,
-		'big-text-level'   : 2
+		'big-text-level'   : 2,
+		'tr-border': 3px
 	);
 	$parameters_expanded : (
 		'margin': 15px,
