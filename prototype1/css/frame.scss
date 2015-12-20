@@ -18,7 +18,7 @@ $base-font-size: 16px;
 
 $type-settings: (
   -1: (
-    font-size: 0.75 * $base-font-size
+    font-size: 0.875 * $base-font-size
   ),
   0: (
     font-size: $base-font-size
@@ -75,21 +75,42 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-@mixin rp-offer($width, $block-margin: 3px, $text-margin: 15px) {
+/*
+	$w    - width of .offer element
+	$x    - margin between block inside offer
+	$y    - padding inside blocks
+	$sm-t - small text level
+	$md-t - medium text level
+	$bg-t - big text level
+	e - stands for expanded state (all variables with e on the end, like $xe, $ye, etc.)
+	
+	
+*/
+
+@mixin rp-offer($offer_width, $parameters, $parameters_expanded) {
     //tricky part 
     //choose a, b so that there is same margin between block
     //horizontally and vertically. 
-    $w: $width;
-    $x: $block-margin;
-    $y: $text-margin;
-    $b: ($w - 2 * $x) / 3;
-    $a: ($b - $x) / 2;
+    $w: $offer_width;
+    $x: map-get($parameters, 'margin');
+    $y: map-get($parameters, 'padding');
+    $b: ($w - 2 * $x) / 3;// size of the large blocks
+    $a: ($b - $x) / 2;//size of small blocks
+	//text levels
+	$sm-t: map-get($parameters, 'small-text-level');
+	$md-t: map-get($parameters, 'medium-text-level');
+	$bg-t: map-get($parameters, 'big-text-level');
+	
 	//e - extended
-	$xe: 5 * $x;
-	$ye: 2 * $y;
+	$xe: map-get($parameters_expanded, 'margin');
+	$ye: map-get($parameters_expanded, 'padding');
 	$be:($w - $xe) / 2;
 	$ae:($w - 3 * $xe) / 4;
-    $ce: 2/3 * $be; //4 to 6
+    $ce: map-get($parameters_expanded, 'ratio') * $ae; //4 to 6 //size of semi blocks
+	//text levels
+	$sm-te: map-get($parameters_expanded, 'small-text-level');
+	$md-te: map-get($parameters_expanded, 'medium-text-level');
+	$bg-te: map-get($parameters_expanded, 'big-text-level');
     
     @function shift($i) {
         @return 1 * $b + ($i - 1) * $a + $i * $x;
@@ -119,7 +140,7 @@ body {
 		//sizes
 		//normal
 		.type, .price, .house, .more {
-			@include rp-block($a, $a, 1, $y);
+			@include rp-block($a, $a, $md-t, $y);
 		}
 		
 		//to make arrow big
@@ -128,15 +149,15 @@ body {
 		}
 
 		.description {
-			@include rp-block($b, $a, 0, $y);
+			@include rp-block($b, $a, $sm-t, $y);
 		}
 
 		.additional, .area {
-			@include rp-block($a, $a, 0, $y);
+			@include rp-block($a, $a, $sm-t, $y);
 		}
 
 		.location {
-			@include rp-block($b, $b, 2, $y);
+			@include rp-block($b, $b, $bg-t, $y);
 		}
 
 		//position
@@ -174,20 +195,20 @@ body {
 		height: $be + $xe + $ae;
 		//sizes
 		.type, .price, .house, .more {
-			@include rp-block($ae, $ae, 1, $ye);
+			@include rp-block($ae, $ae, $md-te, $ye);
 		}
 		//to make arrow big
 		.more .content {
 			font-size: ($ae - 2 * $ye) * 0.5;
 		}
 		.description {
-			@include rp-block($be, $ae, 0, $ye);
+			@include rp-block($be, $ce, $sm-te, $ye);
 		}
 		.additional, .area {
-			@include rp-block($ae, $ae, 0, $ye);
+			@include rp-block($ae, $ce, $sm-te, $ye);
 		}
 		.location {
-			@include rp-block($be, $be, 2, $ye);
+			@include rp-block($be, $be, $bg-te, $ye);
 		}
 
 		//position
@@ -201,7 +222,7 @@ body {
 			top: $be + $xe;
 		}
 		.more {
-			top: $ae + $ae + 2 * $xe;
+			top: $ae + $ce + 2 * $xe;
 		}
 		.location, .description {
 			left: 0;
@@ -384,19 +405,64 @@ body {
     .container {
         width: 750px;
     }
-	@include rp-offer(608px);
+	$parameters : (
+		'margin': 3px,
+		'padding': 15px,
+		'small-text-level' : 0,
+		'medium-text-level': 1,
+		'big-text-level'   : 2
+	);
+	$parameters_expanded : (
+		'margin': 15px,
+		'padding': 30px,
+		'small-text-level' : 0,
+		'medium-text-level': 1,
+		'big-text-level'   : 2,
+		'ratio': 1
+	);
+	@include rp-offer(608px, $parameters, $parameters_expanded);
 }
 @media (min-width: 992px) and (max-width: 1999px) {
     .container {
         width: 970px;
     }
-	@include rp-offer(908px);
+	$parameters : (
+		'margin': 3px,
+		'padding': 10px,
+		'small-text-level' : -1,
+		'medium-text-level': 0,
+		'big-text-level'   : 2
+	);
+	$parameters_expanded : (
+		'margin': 15px,
+		'padding': 30px,
+		'small-text-level' : 0,
+		'medium-text-level': 1,
+		'big-text-level'   : 2,
+		'ratio': 1
+	);
+	@include rp-offer(908px, $parameters, $parameters_expanded);
 }
 @media (min-width: 1199px) {
     .container {
         width: 1170px;
     }
-    @include rp-offer(1108px);
+	$parameters : (
+		'margin': 3px,
+		'padding': 15px,
+		'small-text-level' : 0,
+		'medium-text-level': 1,
+		'big-text-level'   : 2
+	);
+	$parameters_expanded : (
+		'margin': 15px,
+		'padding': 30px,
+		'small-text-level' : 0,
+		'medium-text-level': 1,
+		'big-text-level'   : 2,
+		'ratio': 1
+	);
+    @include rp-offer(1108px, $parameters, $parameters_expanded);
 }
 
 .container {
