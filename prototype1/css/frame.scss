@@ -17,6 +17,9 @@ $anim-time: 0.5s;
 $base-font-size: 16px;
 
 $type-settings: (
+  -2: (
+	font-size: 0.75  * $base-font-size
+  ), 
   -1: (
     font-size: 0.875 * $base-font-size
   ),
@@ -239,7 +242,7 @@ body {
 
 .location, .type, .price, .house, .more,
 .area, .description, .additional {
-	@include transition(width $anim-time ease, height $anim-time ease, left $anim-time ease, top $anim-time ease);
+	@include transition(font $anim-time ease, width $anim-time ease, height $anim-time ease, left $anim-time ease, top $anim-time ease);
     position: absolute;
     text-align: center;
 	font-weight: 300;
@@ -348,20 +351,28 @@ body {
 
 .description, .additional, .area {
     .content {
+		text-align: left;
     	position: relative;
 		font-weight: 300;
     }
 }
 
-.description {
-	.content {
-		text-align: justify;
+.additional, .area {
+	.content:after {
+		content: "\00A0";
+		background: white; 
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 98%;
 	}
-	
+}
+
+.description {
 	.content:before {
 		content: "\00A0";
-		display: inline;
-		background: linear-gradient(to right, rgba(7, 31, 39, 0), rgba(7, 31, 39, 0.7) 50%, rgba(7, 31, 39, 1) 90%, #071f27);
+		background: linear-gradient(to right, rgba(7, 31, 39, 0), rgba(7, 31, 39, 0.7) 50%, rgba(7, 31, 39, 1) 90%);
 		position: absolute;
 		right:0;
 		bottom:0;
@@ -370,23 +381,24 @@ body {
 	}
 	
 	.content:after {
-		display: inline;
+		content: "\00A0";
 		background: #071f27; 
 		height: 100%;
+		width: 100%;
 		position: absolute;
-		width: 100%;		
+		left: 0;
+		top: 99%;
 	}
 }
 
 .additional, .area {
 	.content {
-		tbody {
+		th {
+			font-weight: 300;
+		}
+		td, th{
 			text-align: left;
 		}
-		thead {
-			text-align: center;
-		}
-		
 		table {
 			table-layout: fixed;
 			border-collapse: collapse;
@@ -395,7 +407,7 @@ body {
 			padding: 0px;
 		}
 		td:first-child {
-			padding-right: 10px;
+			padding-right: 5px;
 		}
 	}
 }
@@ -407,20 +419,20 @@ body {
     }
 	$parameters : (
 		'margin': 3px,
-		'padding': 15px,
-		'small-text-level' : 0,
-		'medium-text-level': 1,
-		'big-text-level'   : 2
+		'padding': 8px,
+		'small-text-level' : -2,
+		'medium-text-level': -1,
+		'big-text-level'   : 1
 	);
 	$parameters_expanded : (
-		'margin': 15px,
-		'padding': 30px,
-		'small-text-level' : 0,
-		'medium-text-level': 1,
+		'margin': 9px,
+		'padding': 10px,
+		'small-text-level' : -2,
+		'medium-text-level': 0,
 		'big-text-level'   : 2,
 		'ratio': 1
 	);
-	@include rp-offer(608px, $parameters, $parameters_expanded);
+	@include rp-offer(690px, $parameters, $parameters_expanded);
 }
 @media (min-width: 992px) and (max-width: 1999px) {
     .container {
@@ -434,9 +446,9 @@ body {
 		'big-text-level'   : 2
 	);
 	$parameters_expanded : (
-		'margin': 15px,
-		'padding': 30px,
-		'small-text-level' : 0,
+		'margin': 12px,
+		'padding': 15px,
+		'small-text-level' : -1,
 		'medium-text-level': 1,
 		'big-text-level'   : 2,
 		'ratio': 1
