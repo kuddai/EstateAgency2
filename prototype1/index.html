@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="./css/main.css">
 	<link rel="stylesheet" href="./css/font-awesome.min.css">
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="js/jquery.mobile.custom.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 </head>
 
@@ -21,11 +22,120 @@
 
 			<div class="offer">
 				<!--div class="location"-->
-					<div id="carousel-example-generic" class="location carousel slide" data-ride="carousel" data-interval="false">
+					<div id="aski-carousel-1" class="location carousel slide" data-ride="carousel" data-interval="false">
 						  <!-- Indicators -->
 						  <ol class="carousel-indicators">
-							<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-							<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+							<li data-target="#aski-carousel-1" data-slide-to="0" class="active"></li>
+							<li data-target="#aski-carousel-1" data-slide-to="1"></li>
+						  </ol>
+
+						  <!-- Wrapper for slides -->
+						  <div class="carousel-inner" role="listbox">
+							<div class="item active">
+						  		<div class="location-clip" style="background-image: url(./img/city-map-light-5-sm.png);">							<div class="content">Район Некрасовка, просп. Защитников Москвы, 7к1</div>
+						  		</div>
+							</div>
+							<div class="item">
+						  		<div class="location-clip" style="background-image: url(./img/city-map-light-5-sm.png);"></div>
+							</div>
+						  </div>
+					</div>
+				<!--/div-->
+				<div class="type">
+					<div class="content">продажа</div>
+				</div>
+				<div class="price">
+					<div class="content">
+						150 000 000&nbsp;<i class="fa fa-rub"></i> в&nbsp;месяц
+					</div>
+				</div>
+				<div class="house">
+					<div class="content">1-комнатная квартира, панельный дом</div>
+				</div>
+				<div class="area">
+					<div class="content">
+						<table>
+							<thead class="extra">
+								<tr>
+									<th>Площадь:</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="extra">Общая:</td>
+									<td class="common-area">59&nbsp;м²</td>
+								</tr>
+								<tr class="extra">
+									<td>Жилая:</td>
+									<td>59&nbsp;м²</td>
+								</tr>
+								<tr class="extra">
+									<td>Кухня:</td>
+									<td>59&nbsp;м²</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="additional">
+					<div class="content">
+						<table>
+							<thead>
+								<tr>
+									<th>Общая информация:</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Этаж:</td>
+									<td>3&nbsp;/&nbsp;7</td>
+								</tr>
+								<tr>
+									<td>Лифт:</td>
+									<td>2П</td>
+								</tr>
+								<tr>
+									<td>Балкон:</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td>Санузел:</td>
+									<td>1<span>C</span></td>
+								</tr>
+								<tr class="extra">
+									<td>Окна:</td>
+									<td>двор и улица</td>
+								</tr>
+								<tr class="extra">
+									<td>Телефон:</td>
+									<td>нет</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="description">
+					<div class="content">
+						<h3 class="extra">Описание:</h3>
+						Продается 1/12 доля в двухкомнатной квартире, для постоянной регистрации (прописки) и возможного проживания. Можно для семьи с ребенком 2/12 доли. Очень хорошая перспектива выкупа других долей или расселения с получением отдельного жилья в этом же районе. Дом в плане под снос до 2018 года. Документы готовы к сделке
+					</div>
+				</div>
+				<div class="more available" onclick="$('.offer').toggleClass('expanded');">
+					<div class="content">
+						<a><i class="fa fa-chevron-down"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+
+			<div class="offer">
+				<!--div class="location"-->
+					<div id="aski-carousel-2" class="location carousel slide" data-ride="carousel" data-interval="false">
+						  <!-- Indicators -->
+						  <ol class="carousel-indicators">
+							<li data-target="#aski-carousel-2" data-slide-to="0" class="active"></li>
+							<li data-target="#aski-carousel-2" data-slide-to="1"></li>
 						  </ol>
 
 						  <!-- Wrapper for slides -->
@@ -130,6 +240,21 @@
 			Instead Footer
 		</div>
 	</div>
+
+<script>
+  $(document).ready(function() {  
+	  	 var $carousels = $("div[id^='aski-carousel']");
+	  	 $carousels.each(function() {
+			 var $current = $(this);
+			 $current.swiperight(function() {
+				 $current.carousel('prev'); 
+			 });
+			 $current.swipeleft(function() {
+				 $current.carousel('next'); 
+			 });
+		 }); 
+	});  
+</script>
 </body>
 
 </html>
