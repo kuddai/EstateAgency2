@@ -2,7 +2,7 @@ $anim-time: 0.5s;
 $base-font-size: 16px;
 $blue: #03B1F3;
 $crimson: #FF2C83;
-
+/**/
 $type-settings: (
   -2: (
 	font-size: 0.75  * $base-font-size
@@ -75,4 +75,13 @@ body {
     margin-left: auto;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.location {
+	background-image: url(../img/city-map-light-5-sm.png);
+    color: black;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }

@@ -2,7 +2,13 @@
 @import "card";
 @import "main-card";
 @import "main-offer";
+@import "mobile-offer";
 
+/*    */
+
+@media (max-width: 767px) {
+	@include mobile-offer();
+}
 
 //from bootstap
 @media (min-width: 768px) {

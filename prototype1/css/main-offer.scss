@@ -1,4 +1,23 @@
 @import "base";
+/*    */
+@mixin offer-block($wd, $ht, $level, $padding) {
+	$fs: type-scale($level);
+	$lh: line-height($level);
+	width: $wd;
+	height: $ht;
+	font-size: $fs;
+	line-height: $lh;
+	//without that with just padding it is very hard to center
+	//everything properly in case of possible content overflow
+	.content {
+		max-width: $wd - 2 * $padding;
+		max-height: round(($ht - 2 * $padding) / $lh) * $lh;
+	}
+}
+
+@function shift($i, $aa, $bb, $xx) {
+	@return 1 * $bb + ($i - 1) * $aa + $i * $xx;
+}
 
 @mixin main-offer($offer_width, $parameters, $parameters_expanded) {
     //tricky part 
@@ -25,31 +44,11 @@
 	$md-te: map-get($parameters_expanded, 'medium-text-level');
 	$bg-te: map-get($parameters_expanded, 'big-text-level');
     
-    @function shift($i) {
-        @return 1 * $b + ($i - 1) * $a + $i * $x;
-    }
-    
-    @mixin rp-block($wd, $ht, $level, $padding) {
-        $fs: type-scale($level);
-        $lh: line-height($level);
-        width: $wd;
-        height: $ht;
-        font-size: $fs;
-        line-height: $lh;
-		//without that with just padding it is very hard to center
-		//everything properly in case of possible content overflow
-        .content {
-            max-width: $wd - 2 * $padding;
-            max-height: round(($ht - 2 * $padding) / $lh) * $lh;
-        }
-    }
-	
 	.offer {
 		@include transition(width $anim-time ease, height $anim-time ease);
 		position: relative;
 		width: $w;
 		height: $b;
-		
 				
 		//to make arrow big
 		.more .content {
@@ -72,19 +71,19 @@
 		//sizes
 		//normal
 		.type, .price, .house, .more {
-			@include rp-block($a, $a, $md-t, $y);
+			@include offer-block($a, $a, $md-t, $y);
 		}
 
 		.description {
-			@include rp-block($b, $a, $sm-t, $y);
+			@include offer-block($b, $a, $sm-t, $y);
 		}
 
 		.additional, .area {
-			@include rp-block($a, $a, $sm-t, $y);
+			@include offer-block($a, $a, $sm-t, $y);
 		}
 
 		.location {
-			@include rp-block($b, $b, $bg-t, $y);
+			@include offer-block($b, $b, $bg-t, $y);
 		}
 
 		//position
@@ -101,19 +100,19 @@
 		}
 
 		.type, .description {
-			left: shift(1);
+			left: shift(1, $a, $b, $x);
 		}
 
 		.price {
-			left: shift(2);
+			left: shift(2, $a, $b, $x);
 		}
 
 		.house, .additional {
-			left: shift(3);
+			left: shift(3, $a, $b, $x);
 		}
 
 		.area, .more {
-			left: shift(4);
+			left: shift(4, $a, $b, $x);
 		} 
 	}
 	//expanded
@@ -128,20 +127,20 @@
 		
 		//sizes
 		.type, .price, .house, .more {
-			@include rp-block($ae, $ae, $md-te, $ye);
+			@include offer-block($ae, $ae, $md-te, $ye);
 		}
 		//to make arrow big
 		.more .content {
 			font-size: ($ae - 2 * $ye) * 0.5;
 		}
 		.description {
-			@include rp-block($be, $ce, $sm-te, $ye);
+			@include offer-block($be, $ce, $sm-te, $ye);
 		}
 		.additional, .area {
-			@include rp-block($ae, $ce, $sm-te, $ye);
+			@include offer-block($ae, $ce, $sm-te, $ye);
 		}
 		.location {
-			@include rp-block($be, $be, $bg-te, $ye);
+			@include offer-block($be, $be, $bg-te, $ye);
 		}
 
 		//position
