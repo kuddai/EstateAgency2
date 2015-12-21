@@ -56,6 +56,10 @@
 
 	.description {
 		color: white;
+		.extra {
+			visibility: hidden;
+			display: none;
+		}
 	}
 
 	.price {
@@ -133,7 +137,7 @@
 			width: 100%;
 			position: absolute;
 			left: 0;
-			top: 99%;
+			top: 98%;
 		}
 	}
 }

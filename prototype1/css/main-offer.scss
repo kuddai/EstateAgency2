@@ -61,7 +61,7 @@
 			}
 		}
 		
-		.extra {
+		.additional .extra {
 			//only with that configuraton the table computes size properly
 			//in the expanded state
 			position: absolute; //to remove from dom flow
@@ -120,7 +120,7 @@
 		width: $w;
 		height: $be + $xe + $ae;
 		
-		.extra {
+		.additional .extra {
 			visibility: visible;
 			position: inherit;
 		}

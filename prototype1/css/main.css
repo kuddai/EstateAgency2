@@ -180,9 +180,15 @@ body {
   background-repeat: no-repeat; }
 
 /* */
+/* table stuff*/
 /*    */
 @media (max-width: 767px) {
+  .card {
+    padding-bottom: 35px;
+    margin-bottom: 50px; }
+
   .offer {
+    overflow: hidden;
     /*    sdf */ }
     .offer .location:after {
       content: "";
@@ -201,25 +207,22 @@ body {
       -webkit-box-align: center;
       align-items: center;
       justify-content: center; }
-    .offer .location, .offer .price, .offer .house {
-      margin-bottom: 5px; }
-    .offer .type {
-      display: none;
-      visibility: hidden; }
+    .offer .location, .offer .price, .offer .house, .offer .additional, .offer .area {
+      margin-bottom: 15px; }
     .offer .more {
+      z-index: 1;
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
       border-radius: 50%;
-      /*padding: 3px;*/
-      position: absolute;
-      bottom: -35px;
-      left: 50%;
-      text-align: center;
       background: #071f27;
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      width: 60px;
+      height: 60px;
+      margin-left: -30px;
       font-size: 40px;
-      width: 70px;
-      height: 70px;
-      margin-left: -35px;
+      text-align: center;
       display: -ms-flexbox;
       display: -webkit-flex;
       display: flex;
@@ -235,7 +238,63 @@ body {
     .offer .house, .offer .additional, .offer .area, .offer .description {
       font-size: 16px;
       line-height: 20px;
-      font-weight: 300; } }
+      font-weight: 300; }
+    .offer .type, .offer .area .extra, .offer .additional, .offer .description {
+      display: none;
+      visibility: hidden; }
+    .offer .house {
+      display: inline-block; }
+    .offer .area {
+      display: inline-block; }
+      .offer .area .content, .offer .area table, .offer .area tbody, .offer .area tr, .offer .area td {
+        display: inline-block; }
+      .offer .area .content:before {
+        margin-left: -3px;
+        content: ", ";
+        display: inline-block; }
+    .offer .description h3 {
+      margin-top: 0;
+      margin-bottom: 5px;
+      font-size: 16px;
+      line-height: 20px; }
+
+  .offer.expanded .additional, .offer.expanded .description {
+    display: block;
+    visibility: visible; }
+  .offer.expanded .house {
+    display: block; }
+  .offer.expanded .area {
+    display: block; }
+    .offer.expanded .area .content {
+      display: block; }
+    .offer.expanded .area .extra {
+      visibility: visible; }
+    .offer.expanded .area thead {
+      display: table-header-group; }
+    .offer.expanded .area table {
+      display: table; }
+    .offer.expanded .area tbody {
+      display: table-row-group; }
+    .offer.expanded .area tr {
+      display: table-row; }
+    .offer.expanded .area td, .offer.expanded .area th {
+      display: table-cell; }
+    .offer.expanded .area .content:before {
+      margin-left: auto;
+      content: "";
+      display: none; }
+  .offer.expanded .area table, .offer.expanded .additional table {
+    border-collapse: collapse;
+    width: 100%; }
+  .offer.expanded .area td:first-child, .offer.expanded .area th, .offer.expanded .additional td:first-child, .offer.expanded .additional th {
+    text-align: left; }
+  .offer.expanded .area td:last-child, .offer.expanded .additional td:last-child {
+    text-align: right; }
+  .offer.expanded .area td, .offer.expanded .area th, .offer.expanded .additional td, .offer.expanded .additional th {
+    padding-top: 5px;
+    padding-bottom: 5px; }
+  .offer.expanded .area tbody tr, .offer.expanded .additional tbody tr {
+    border-bottom: 1px solid #ddd; } }
 @media (min-width: 768px) {
   .card {
     margin-bottom: 25px; }
@@ -285,6 +344,9 @@ body {
 
   .description {
     color: white; }
+    .description .extra {
+      visibility: hidden;
+      display: none; }
 
   .price {
     color: white;
@@ -336,7 +398,7 @@ body {
     width: 100%;
     position: absolute;
     left: 0;
-    top: 99%; }
+    top: 98%; }
 
   .container {
     width: 750px; }
@@ -354,7 +416,7 @@ body {
       font-size: 48.25px; }
     .offer .additional .content tr, .offer .area .content tr {
       border: 5px solid transparent; }
-    .offer .extra {
+    .offer .additional .extra {
       position: absolute;
       visibility: hidden; }
     .offer .type, .offer .price, .offer .house, .offer .more {
@@ -407,7 +469,7 @@ body {
   .offer.expanded {
     width: 690px;
     height: 515.25px; }
-    .offer.expanded .extra {
+    .offer.expanded .additional .extra {
       visibility: visible;
       position: inherit; }
     .offer.expanded .type, .offer.expanded .price, .offer.expanded .house, .offer.expanded .more {
@@ -475,7 +537,7 @@ body {
       font-size: 63.16667px; }
     .offer .additional .content tr, .offer .area .content tr {
       border: 3px solid transparent; }
-    .offer .extra {
+    .offer .additional .extra {
       position: absolute;
       visibility: hidden; }
     .offer .type, .offer .price, .offer .house, .offer .more {
@@ -528,7 +590,7 @@ body {
   .offer.expanded {
     width: 908px;
     height: 678px; }
-    .offer.expanded .extra {
+    .offer.expanded .additional .extra {
       visibility: visible;
       position: inherit; }
     .offer.expanded .type, .offer.expanded .price, .offer.expanded .house, .offer.expanded .more {
@@ -596,7 +658,7 @@ body {
       font-size: 74.83333px; }
     .offer .additional .content tr, .offer .area .content tr {
       border: 3px solid transparent; }
-    .offer .extra {
+    .offer .additional .extra {
       position: absolute;
       visibility: hidden; }
     .offer .type, .offer .price, .offer .house, .offer .more {
@@ -649,7 +711,7 @@ body {
   .offer.expanded {
     width: 1108px;
     height: 827.25px; }
-    .offer.expanded .extra {
+    .offer.expanded .additional .extra {
       visibility: visible;
       position: inherit; }
     .offer.expanded .type, .offer.expanded .price, .offer.expanded .house, .offer.expanded .more {

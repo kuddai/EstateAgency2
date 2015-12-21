@@ -1,8 +1,37 @@
 @import "base";
 
 /* */
+/* table stuff*/
+@mixin table-pretty() {
+	table {
+		border-collapse: collapse;
+		width: 100%;
+	}
+	td:first-child, th {
+		text-align: left;
+	}
+	td:last-child {
+		text-align: right;
+	}
+	td, th {
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+		
+	tbody tr {
+		border-bottom: 1px solid #ddd;		
+	}
+}
+
 @mixin mobile-offer() {
+	.card {
+		padding-bottom: 35px;
+		margin-bottom: 50px;
+	}
+	
 	.offer {
+		overflow: hidden;//to hide hidden part when expand
+		
 		.location:after {
 			content: "";
 			display:block;
@@ -24,27 +53,25 @@
 			align-items: center;
 			justify-content: center;
 		}
-		.location, .price, .house {
-			margin-bottom: 5px;
+		.location, .price, .house, .additional, .area {
+			margin-bottom: 15px;
 		}
-		.type {
-			display: none;
-			visibility: hidden;
-		}
+
 		.more {
+			z-index: 1;
 			-webkit-border-radius: 50%; 
 			   -moz-border-radius: 50%; 
 			        border-radius: 50%;
-			/*padding: 3px;*/
-			position: absolute;
-			bottom: -35px;
-			left: 50%;
-			text-align: center;
 			background: $dark;
+			position: absolute;
+			bottom: -30px;
+			left: 50%;
+			width: 60px;
+			height: 60px;
+			margin-left: -30px;
 			font-size: 40px;
-			width: 70px;
-			height: 70px;
-			margin-left: -35px;
+			//centering
+			text-align: center;
 			display: -ms-flexbox;
 			display: -webkit-flex;
 			display: flex;
@@ -66,9 +93,74 @@
 			@include type-setting(0);
 			font-weight: 300;
 		}
+		
+		.type, .area .extra, .additional, .description  {
+			display: none;
+			visibility: hidden;
+		}		
+		.house {
+			display: inline-block;
+		}
+	  	.area {
+			display: inline-block;
+			.content, table, tbody, tr, td {
+				display: inline-block;
+			} 
+			.content:before {
+				margin-left: -3px;
+				content: ", ";
+				display: inline-block;	
+			}
+		} 
+		.description h3 {
+			margin-top: 0;
+			margin-bottom: 5px;
+			@include type-setting(0);
+		}
 	}
 	
 	.offer.expanded {
+		
+		.additional, .description  {
+			display: block;
+			visibility: visible;
+		}		
+		.house {
+			display: block;
+		}
+		.area {
+			display: block;
+			.content {
+				display: block;
+			}
+			.extra {
+				visibility: visible;
+			}
+			thead {
+				display: table-header-group;
+			}
+			table {
+				display: table;
+			}
+			tbody {
+				display: table-row-group;
+			}
+			tr {
+				display: table-row;
+			}
+			td, th {
+				display: table-cell;
+			}
+			.content:before {
+				margin-left: auto;
+				content: "";
+				display: none;	
+			}
+		}
+		
+		.area, .additional {
+			@include table-pretty();
+		}
 		
 	}
 }
