@@ -1,2 +1,3 @@
 If you are using display none on table rows then when they reappear other parts of the table account new rows very strangely in terms of margin.
-If pre-wrap is (or one of them) on and the text-align: justify is on then it doesn't work properly
+If pre-wrap is (or one of them) on and the text-align: justify is on then it doesn't work properly.
+If you just put something in thead, then it will be rendered outside table.

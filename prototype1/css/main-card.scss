@@ -1,6 +1,10 @@
 @import "base";
 
 @mixin main-card() {
+	.card {
+		margin-bottom: 25px;
+	}
+	
 	.location, .type, .price, .house, .more,
 	.area, .description, .additional {
 		@include transition(font $anim-time ease, width $anim-time ease, height $anim-time ease, left $anim-time ease, top $anim-time ease);
@@ -47,7 +51,7 @@
 	}
 
 	.description, .more {
-		background-color: #071f27;
+		background-color: $dark;
 	}
 
 	.description {
@@ -95,6 +99,11 @@
 			}
 		}
 	}
+	/*  */
+	.additional thead {
+		display: none;
+		visibility: hidden;
+	}
 	
 	.offer.expanded {
 		.additional, .area {
@@ -119,55 +128,12 @@
 
 		.content:after {
 			content: "\00A0";
-			background: #071f27; 
+			background: $dark; 
 			height: 100%;
 			width: 100%;
 			position: absolute;
 			left: 0;
 			top: 99%;
 		}
-	}
-	
-	.more {
-		a {
-			@include transition(color $anim-time ease);
-			text-decoration: none;
-			color: #365059;
-			text-shadow: 0px 1px 0px #5C7F8C;//#7BB8CC;
-			cursor:not-allowed;
-		}
-		&.available a {
-			color: $blue;
-			text-shadow: 0px 1px 0px #5C8A99;
-			cursor:default;		
-		}
-		&.available a:hover {
-			color: $crimson;
-			text-shadow: 0px 1px 0px #995C75;
-			cursor: pointer;		
-		}
-	}
-
-	.offer .more .content {
-		//@include transition(transform $anim-time ease);
-		-webkit-transition: -webkit-transform $anim-time ease;
-		-moz-transition: -moz-transform $anim-time ease;
-		-ms-transition: -ms-transform $anim-time ease;
-		-o-transition: -o-transform $anim-time ease;
-		transition: transform $anim-time ease;
-
-		-webkit-transform: rotate(0deg);
-		   -moz-transform: rotate(0deg);
-			-ms-transform: rotate(0deg);
-			 -o-transform: rotate(0deg);
-				transform: rotate(0deg);	
-	}
-
-	.offer.expanded .more .content {
-		-webkit-transform: rotate(180deg);
-		   -moz-transform: rotate(180deg);
-			-ms-transform: rotate(180deg);
-			 -o-transform: rotate(180deg);
-				transform: rotate(180deg);
 	}
 }

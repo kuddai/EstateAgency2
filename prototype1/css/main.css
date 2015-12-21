@@ -38,6 +38,44 @@ body {
   box-sizing: border-box;
   position: relative; }
 
+.more a {
+  -webkit-transition: color 0.5s ease;
+  -moz-transition: color 0.5s ease;
+  -ms-transition: color 0.5s ease;
+  -o-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+  text-decoration: none;
+  color: #365059;
+  text-shadow: 0px 1px 0px #5C7F8C;
+  cursor: not-allowed; }
+.more.available a {
+  color: #03B1F3;
+  text-shadow: 0px 1px 0px #5C8A99;
+  cursor: default; }
+.more.available a:hover {
+  color: #FF2C83;
+  text-shadow: 0px 1px 0px #995C75;
+  cursor: pointer; }
+
+.offer .more .content {
+  -webkit-transition: -webkit-transform 0.5s ease;
+  -moz-transition: -moz-transform 0.5s ease;
+  -ms-transition: -ms-transform 0.5s ease;
+  -o-transition: -o-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg); }
+
+.offer.expanded .more .content {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
 /**/
 html, body {
   width: 100%;
@@ -144,32 +182,64 @@ body {
 /* */
 /*    */
 @media (max-width: 767px) {
-  .location:after {
-    content: "";
-    display: block;
-    padding-top: 56%; }
-
-  .location {
-    width: 100%;
-    text-align: center;
-    font-weight: 300;
-    box-sizing: border-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    align-items: center;
-    justify-content: center; }
-
-  .type {
-    display: none;
-    visibility: hidden; }
-
-  .price {
-    text-align: left; } }
+  .offer {
+    /*    sdf */ }
+    .offer .location:after {
+      content: "";
+      display: block;
+      padding-top: 56%; }
+    .offer .location {
+      width: 100%;
+      text-align: center;
+      font-weight: 300;
+      box-sizing: border-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      align-items: center;
+      justify-content: center; }
+    .offer .location, .offer .price, .offer .house {
+      margin-bottom: 5px; }
+    .offer .type {
+      display: none;
+      visibility: hidden; }
+    .offer .more {
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      /*padding: 3px;*/
+      position: absolute;
+      bottom: -35px;
+      left: 50%;
+      text-align: center;
+      background: #071f27;
+      font-size: 40px;
+      width: 70px;
+      height: 70px;
+      margin-left: -35px;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      align-items: center;
+      justify-content: center; }
+    .offer .location, .offer .price {
+      font-size: 21.328px;
+      line-height: 26.66px;
+      font-weight: 400; }
+    .offer .house, .offer .additional, .offer .area, .offer .description {
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 300; } }
 @media (min-width: 768px) {
+  .card {
+    margin-bottom: 25px; }
+
   .location, .type, .price, .house, .more,
   .area, .description, .additional {
     -webkit-transition: font 0.5s ease, width 0.5s ease, height 0.5s ease, left 0.5s ease, top 0.5s ease;
@@ -243,6 +313,11 @@ body {
   .additional .content td:first-child, .area .content td:first-child {
     padding-right: 5px; }
 
+  /*  */
+  .additional thead {
+    display: none;
+    visibility: hidden; }
+
   .offer.expanded .additional .content td:first-child, .offer.expanded .area .content td:first-child {
     padding-right: 10px; }
 
@@ -262,44 +337,6 @@ body {
     position: absolute;
     left: 0;
     top: 99%; }
-
-  .more a {
-    -webkit-transition: color 0.5s ease;
-    -moz-transition: color 0.5s ease;
-    -ms-transition: color 0.5s ease;
-    -o-transition: color 0.5s ease;
-    transition: color 0.5s ease;
-    text-decoration: none;
-    color: #365059;
-    text-shadow: 0px 1px 0px #5C7F8C;
-    cursor: not-allowed; }
-  .more.available a {
-    color: #03B1F3;
-    text-shadow: 0px 1px 0px #5C8A99;
-    cursor: default; }
-  .more.available a:hover {
-    color: #FF2C83;
-    text-shadow: 0px 1px 0px #995C75;
-    cursor: pointer; }
-
-  .offer .more .content {
-    -webkit-transition: -webkit-transform 0.5s ease;
-    -moz-transition: -moz-transform 0.5s ease;
-    -ms-transition: -ms-transform 0.5s ease;
-    -o-transition: -o-transform 0.5s ease;
-    transition: transform 0.5s ease;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg); }
-
-  .offer.expanded .more .content {
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    transform: rotate(180deg); }
 
   .container {
     width: 750px; }
@@ -433,60 +470,60 @@ body {
     transition: width 0.5s ease, height 0.5s ease;
     position: relative;
     width: 908px;
-    height: 300.66667px; }
+    height: 298.66667px; }
     .offer .more .content {
-      font-size: 64.41667px; }
+      font-size: 63.16667px; }
     .offer .additional .content tr, .offer .area .content tr {
       border: 3px solid transparent; }
     .offer .extra {
       position: absolute;
       visibility: hidden; }
     .offer .type, .offer .price, .offer .house, .offer .more {
-      width: 148.83333px;
-      height: 148.83333px;
+      width: 146.33333px;
+      height: 146.33333px;
       font-size: 16px;
       line-height: 20px; }
       .offer .type .content, .offer .price .content, .offer .house .content, .offer .more .content {
-        max-width: 128.83333px;
+        max-width: 126.33333px;
         max-height: 120px; }
     .offer .description {
-      width: 300.66667px;
-      height: 148.83333px;
+      width: 298.66667px;
+      height: 146.33333px;
       font-size: 14px;
       line-height: 17.5px; }
       .offer .description .content {
-        max-width: 280.66667px;
+        max-width: 278.66667px;
         max-height: 122.5px; }
     .offer .additional, .offer .area {
-      width: 148.83333px;
-      height: 148.83333px;
+      width: 146.33333px;
+      height: 146.33333px;
       font-size: 14px;
       line-height: 17.5px; }
       .offer .additional .content, .offer .area .content {
-        max-width: 128.83333px;
+        max-width: 126.33333px;
         max-height: 122.5px; }
     .offer .location {
-      width: 300.66667px;
-      height: 300.66667px;
+      width: 298.66667px;
+      height: 298.66667px;
       font-size: 28.448px;
       line-height: 35.56px; }
       .offer .location .content {
-        max-width: 280.66667px;
+        max-width: 278.66667px;
         max-height: 284.48px; }
     .offer .location, .offer .type, .offer .price, .offer .house, .offer .area {
       top: 0; }
     .offer .description, .offer .additional, .offer .more {
-      top: 151.83333px; }
+      top: 152.33333px; }
     .offer .location {
       left: 0; }
     .offer .type, .offer .description {
-      left: 303.66667px; }
+      left: 304.66667px; }
     .offer .price {
-      left: 455.5px; }
+      left: 457px; }
     .offer .house, .offer .additional {
-      left: 607.33333px; }
+      left: 609.33333px; }
     .offer .area, .offer .more {
-      left: 759.16667px; }
+      left: 761.66667px; }
 
   .offer.expanded {
     width: 908px;
@@ -554,60 +591,60 @@ body {
     transition: width 0.5s ease, height 0.5s ease;
     position: relative;
     width: 1108px;
-    height: 367.33333px; }
+    height: 365.33333px; }
     .offer .more .content {
-      font-size: 76.08333px; }
+      font-size: 74.83333px; }
     .offer .additional .content tr, .offer .area .content tr {
       border: 3px solid transparent; }
     .offer .extra {
       position: absolute;
       visibility: hidden; }
     .offer .type, .offer .price, .offer .house, .offer .more {
-      width: 182.16667px;
-      height: 182.16667px;
+      width: 179.66667px;
+      height: 179.66667px;
       font-size: 21.328px;
       line-height: 26.66px; }
       .offer .type .content, .offer .price .content, .offer .house .content, .offer .more .content {
-        max-width: 152.16667px;
+        max-width: 149.66667px;
         max-height: 159.96px; }
     .offer .description {
-      width: 367.33333px;
-      height: 182.16667px;
+      width: 365.33333px;
+      height: 179.66667px;
       font-size: 16px;
       line-height: 20px; }
       .offer .description .content {
-        max-width: 337.33333px;
-        max-height: 160px; }
+        max-width: 335.33333px;
+        max-height: 140px; }
     .offer .additional, .offer .area {
-      width: 182.16667px;
-      height: 182.16667px;
+      width: 179.66667px;
+      height: 179.66667px;
       font-size: 16px;
       line-height: 20px; }
       .offer .additional .content, .offer .area .content {
-        max-width: 152.16667px;
-        max-height: 160px; }
+        max-width: 149.66667px;
+        max-height: 140px; }
     .offer .location {
-      width: 367.33333px;
-      height: 367.33333px;
+      width: 365.33333px;
+      height: 365.33333px;
       font-size: 28.448px;
       line-height: 35.56px; }
       .offer .location .content {
-        max-width: 337.33333px;
+        max-width: 335.33333px;
         max-height: 320.04px; }
     .offer .location, .offer .type, .offer .price, .offer .house, .offer .area {
       top: 0; }
     .offer .description, .offer .additional, .offer .more {
-      top: 185.16667px; }
+      top: 185.66667px; }
     .offer .location {
       left: 0; }
     .offer .type, .offer .description {
-      left: 370.33333px; }
+      left: 371.33333px; }
     .offer .price {
-      left: 555.5px; }
+      left: 557px; }
     .offer .house, .offer .additional {
-      left: 740.66667px; }
+      left: 742.66667px; }
     .offer .area, .offer .more {
-      left: 925.83333px; }
+      left: 928.33333px; }
 
   .offer.expanded {
     width: 1108px;
