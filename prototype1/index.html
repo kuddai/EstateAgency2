@@ -5,10 +5,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Document</title>
-	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="./css/main.css">
 	<link rel="stylesheet" href="./css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -17,9 +20,26 @@
 		<div class="card">
 
 			<div class="offer">
-				<div class="location">
-					<div class="content">Даламаново 36</div>
-				</div>
+				<!--div class="location"-->
+					<div id="carousel-example-generic" class="location carousel slide" data-ride="carousel" data-interval="false">
+						  <!-- Indicators -->
+						  <ol class="carousel-indicators">
+							<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+						  </ol>
+
+						  <!-- Wrapper for slides -->
+						  <div class="carousel-inner" role="listbox">
+							<div class="item active">
+						  		<div class="location-clip" style="background-image: url(./img/city-map-light-5-sm.png);">							<div class="content">Район Некрасовка, просп. Защитников Москвы, 7к1</div>
+						  		</div>
+							</div>
+							<div class="item">
+						  		<div class="location-clip" style="background-image: url(./img/city-map-light-5-sm.png);"></div>
+							</div>
+						  </div>
+					</div>
+				<!--/div-->
 				<div class="type">
 					<div class="content">продажа</div>
 				</div>
