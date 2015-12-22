@@ -2,7 +2,10 @@ $anim-time: 0.5s;
 $base-font-size: 16px;
 $blue: #03B1F3;
 $crimson: #FF2C83;
+$dark-blue: #114b5f;
 $dark: #071f27;
+$light: #f6fafb;
+
 /**/
 $type-settings: (
   -2: (
@@ -22,6 +25,12 @@ $type-settings: (
   ),
   3: (
     font-size: 2.368 * $base-font-size
+  ),
+  4: (
+	font-size: 3.157 * $base-font-size
+  ),
+  5: (
+	font-size: 4.208 * $base-font-size
   )
 );
 
@@ -59,6 +68,8 @@ html, body {
 
 body {
     font-family: 'Roboto', sans-serif;
+	color: $dark;
+	background-color: $light;
 }
 
 .clearfix:before, .clearfix:after {

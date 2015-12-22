@@ -3,16 +3,53 @@
 @import "main-card";
 @import "main-offer";
 @import "mobile-offer";
+@import "strike";
+@import "business-card";
+@import "map-theme";
 
-/*    */
+.business-card .about h1 {
+	font-size: 30px;
+	line-height: 1.4;
+}
+
+.business-card .contact {
+	font-size: 16px;
+	line-height: 1.4;
+}
+.business-card .contact .full-name {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.4;
+}
+
+.business-card .about p {
+	font-size: 18px;
+	line-height: 1.4;
+}
 
 @media (max-width: 767px) {
 	@include mobile-offer();
+	.strike > h2 {
+		@include type-setting(2);
+	}
 }
 
 //from bootstap
 @media (min-width: 768px) {
 	@include main-card();
+	.strike > h2 {
+		font-size: 34px;
+	}	
+	.business-card {
+		width: 750px;
+	}
+	.business-card .about h1 {
+		@include type-setting(3);
+	}
+	.business-card .about p {
+		@include type-setting(1);
+	}
+
 	
     .container {
         width: 750px;
@@ -41,13 +78,15 @@
     .container {
         width: 970px;
     }
-	
+	.business-card .about h1 {
+		@include type-setting(4);
+	}
 	$parameters : (
 		'margin': 6px,
 		'padding': 10px,
 		'small-text-level' : -1,
 		'medium-text-level': 0,
-		'big-text-level'   : 2,
+		'big-text-level'   : 1,
 		'tr-border': 3px
 	);
 	$parameters_expanded : (
@@ -62,6 +101,13 @@
 }
 
 @media (min-width: 1199px) {
+	.business-card .about h1 {
+		@include type-setting(5);
+	}
+	.strike > h2 {
+		@include type-setting(4);
+	}
+
     .container {
         width: 1170px;
     }

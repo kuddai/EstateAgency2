@@ -1,4 +1,8 @@
 If you are using display none on table rows then when they reappear other parts of the table account new rows very strangely in terms of margin.
 If pre-wrap is (or one of them) on and the text-align: justify is on then it doesn't work properly.
 If you just put something in thead, then it will be rendered outside table.
-CSS animations work only when you change properties explicitly (width, height are good examples because they very often are set indirectly based on their content)
+CSS animations work only when you change properties explicitly (width, height are good examples because they very often are set indirectly based on their content).
+API with right style:
+http://jsfiddle.net/s6Dyp/18/
+https://snazzymaps.com/style/102/clean-grey
+http://maps.googleapis.com/maps/api/staticmap?sensor=false&size=512x512&zoom=15&center=Chicago&style=feature:administrative|element:labels|visibility:off&style=feature:administrative.country|element:geometry.stroke|visibility:off&style=feature:administrative.province|element:geometry.stroke|visibility:off&style=feature:landscape|element:geometry|visibility:on|color:0xe3e3e3&style=feature:landscape.natural|element:labels|visibility:off&style=feature:poi|element:all|visibility:off&style=feature:road|element:all|color:0xcccccc&style=feature:road|element:labels|visibility:off&style=feature:transit|element:labels.icon|visibility:off&style=feature:transit.line|element:geometry|visibility:off&style=feature:transit.line|element:labels.text|visibility:off&style=feature:transit.station.airport|element:geometry|visibility:off&style=feature:transit.station.airport|element:labels|visibility:off&style=feature:water|element:geometry|color:0xFFFFFF&style=feature:water|element:labels|visibility:off

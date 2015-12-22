@@ -1,0 +1,40 @@
+.strike {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.strike > h2 {
+    font-weight: 500;
+    /*font-family: 'EB Garamond', 'Times New Roman', serif;*/
+    font-family: 'Lobster', cursive;
+    /*font-family: 'Bad Script', cursive;*/
+    position: relative;
+    display: inline-block;
+    color: black;
+    /*
+    -webkit-text-stroke: 1px black;
+    text-shadow:
+    2px 1px 0px #000;*/
+}
+
+.strike > h2:before,
+.strike > h2:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 200px;
+    height: 1px;
+    background: black;
+}
+
+.strike > h2:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.strike > h2:after {
+    left: 100%;
+    margin-left: 15px;
+}

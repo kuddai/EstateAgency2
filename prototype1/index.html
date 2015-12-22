@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Document</title>
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="./css/main.css">
@@ -16,8 +17,35 @@
 </head>
 
 <body>
+	<div class="map-theme">
+		<div class="business-card">
+			<div class="about">
+				<h1>Недвижимость&nbsp;по Ростовской&nbsp;Области</h1>
+				<p>
+					Покупка, аренда и продажа недвижимости в Ростове-на-дону, Азове, Таганроге и Батайске.
+					Помощь в оформлении документов на недвижимость.
+				</p>
+			</div>
+			<div class="contact">
+				<div class="full-name">
+					Баяна Амановна
+				</div>
+				<div class="address">
+					<i class="fa fa-map-marker"></i> пер. Братской Оборонной
+				</div>
+				<div class="telephone">
+					<i class="fa fa-phone"></i> +7 (863) 244-27-38
+				</div>
+				<div class="email">
+					<i class="fa fa-envelope"></i> <a class="t-ref" href="mailto:#">cuddai92@yandex.ru</a>
+				</div>
+			</div>
+		</div>
+  	</div>
 	<div class="container">
-
+		<div class="strike">
+			<h2>Предложения</h2>
+		</div>
 		<div class="card">
 
 			<div class="offer">
@@ -120,7 +148,7 @@
 						Продается 1/12 доля в двухкомнатной квартире, для постоянной регистрации (прописки) и возможного проживания. Можно для семьи с ребенком 2/12 доли. Очень хорошая перспектива выкупа других долей или расселения с получением отдельного жилья в этом же районе. Дом в плане под снос до 2018 года. Документы готовы к сделке
 					</div>
 				</div>
-				<div class="more available" onclick="$('.offer').toggleClass('expanded');">
+				<div class="more available" >
 					<div class="content">
 						<a><i class="fa fa-chevron-down"></i></a>
 					</div>
@@ -129,7 +157,7 @@
 		</div>
 		<div class="card">
 
-			<div class="offer">
+			<div class="offer of2">
 				<!--div class="location"-->
 					<div id="aski-carousel-2" class="location carousel slide" data-ride="carousel" data-interval="false">
 						  <!-- Indicators -->
@@ -229,9 +257,9 @@
 						Продается 1/12 доля в двухкомнатной квартире, для постоянной регистрации (прописки) и возможного проживания. Можно для семьи с ребенком 2/12 доли. Очень хорошая перспектива выкупа других долей или расселения с получением отдельного жилья в этом же районе. Дом в плане под снос до 2018 года. Документы готовы к сделке
 					</div>
 				</div>
-				<div class="more available" onclick="$('.offer').toggleClass('expanded');">
+				<div class="more available">
 					<div class="content">
-						<a><i class="fa fa-chevron-down"></i></a>
+						<a class="lox"><i class="fa fa-chevron-down"></i></a>
 					</div>
 				</div>
 			</div>
@@ -243,16 +271,23 @@
 
 <script>
   $(document).ready(function() {  
-	  	 var $carousels = $("div[id^='aski-carousel']");
-	  	 $carousels.each(function() {
-			 var $current = $(this);
-			 $current.swiperight(function() {
-				 $current.carousel('prev'); 
-			 });
-			 $current.swipeleft(function() {
-				 $current.carousel('next'); 
-			 });
-		 }); 
+	  	 //swiping 
+		 $("div[id^='aski-carousel']").each(function() {
+			var $current = $(this);
+			$current.swiperight(function() {
+				$current.carousel('prev'); 
+			});
+			$current.swipeleft(function() {
+				$current.carousel('next'); 
+			});
+		}); 
+	  	//expanding
+	  	$('.offer').each(function() {
+			var $offer = $(this);
+			$offer.on('click', '.more .content a', function() {
+				$offer.toggleClass('expanded');
+			});
+		});
 	});  
 </script>
 </body>

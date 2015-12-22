@@ -1,0 +1,12 @@
+.map-theme {
+	background-attachment: fixed;
+	background-image: url(../img/city-map-dark-5.png);
+	background-color: $dark-blue;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	padding: 48px 15px;
+	margin-bottom: 30px;
+	color: $light;	
+}
