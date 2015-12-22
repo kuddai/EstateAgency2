@@ -89,6 +89,13 @@ body {
     padding-right: 15px;
 }
 
+.disable-select {
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
 /*.location { 
 	background-image: url(../img/city-map-light-5-sm.png);
     color: black;

@@ -41,7 +41,7 @@
 		font-size: 34px;
 	}	
 	.business-card {
-		width: 750px;
+		width: 690px;
 	}
 	.business-card .about h1 {
 		@include type-setting(3);
@@ -78,6 +78,9 @@
     .container {
         width: 970px;
     }
+	.business-card {
+		width: 750px;
+	}
 	.business-card .about h1 {
 		@include type-setting(4);
 	}
